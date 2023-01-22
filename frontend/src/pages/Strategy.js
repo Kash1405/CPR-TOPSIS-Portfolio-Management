@@ -2,7 +2,6 @@ import React from 'react'
 
 import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
-
 import Dropdown from '../components/strategy_dropdown';
 
 function Strategy() {
