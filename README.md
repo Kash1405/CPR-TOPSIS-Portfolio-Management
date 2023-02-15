@@ -1,5 +1,5 @@
 # Algorithmic-Trading
-Final Year Project, COMP4801, The University of Hong Kong
+Final Year Project, COMP4801, The University of Hong Kong <br>
 Link to site: https://wp.cs.hku.hk/2022/fyp22089/
 ___
 
