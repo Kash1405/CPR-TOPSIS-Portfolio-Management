@@ -3,7 +3,7 @@ Final Year Project, COMP4801, The University of Hong Kong
 Link to site: https://wp.cs.hku.hk/2022/fyp22089/
 ___
 
-### ABSTRACT
+### Abstract
 
 A high percentage of all market trading is performed by algorithmic trading systems. As automated systems and the number of short-term high-frequency trades increase, the machine learning models to predict stock prices over such short-term trades also increase. Portfolio management is a field which requires experience, and most existing portfolio management algorithms neglect the relationship between neighboring nodes to assess the importance of the nodes in networks. Thus, the usage of Communication Probability and Relative entropy (CPR), a Technique for Order Preference by Similarity to Ideal Solution (TOPSIS), called CPR-TOPSIS shall be utilized to create a new portfolio management system that takes into consideration this relationship. To date, data collection and preprocessing, prototyping and model selection have been successfully completed, and work on the models and platform templates has been started by the team. The next steps include the creation of the new models, and the development of a web-based trading platform to execute trades using this portfolio management model along with algorithmic trading models.
 ___
