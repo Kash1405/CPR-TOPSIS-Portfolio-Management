@@ -27,7 +27,7 @@ Keeping in mind the time restrictions, the scope of the project has been restric
 Both qualitative and quantitative data shall be used to optimize strategies based on a combination of technical indicators, industry, news and market sentiment. The project utilizes future forecasting models in tandem with CPR-TOPSIS to obtain the best possible results along with increased accuracy. Additionally, the algorithmic trading platform shall be developed for paper trades, and if time permits, the platform shall be linked to a real time trading interface.
 ___
 
-###Deliverables
+### Deliverables
 
 The deliverables of the project can be divided into five sections, and these have been presented in detail below.
 
