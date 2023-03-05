@@ -5,7 +5,7 @@ import { faHome, faFire, faHeart, faBriefcase, faChartLine, faBook } from '@fort
 
 function Sidebar() {
     return (
-        <div className="bg-green-200 w-1/5 h-screen px-10 py-10">
+        <div className="bg-green-200 w-80 h-screen px-10 py-10 fixed">
             <img src="https://picsum.photos/200/40" className="m-auto" />
             <div className="h-20 bg-red-200 rounded-lg mt-10 flex">
                 <p className="w-1/2 font-bold text-center my-auto">$1200</p>

@@ -10,7 +10,7 @@ function Strategy() {
             <Sidebar />
             <div className="w-4/5">
                 <Topbar />
-                <div className="h-full flex-column scroll-smooth">
+                <div className="h-full flex-column scroll-smooth left-80 absolute top-20">
                     <div className='h-2/5 bg-green-200 flex'>
                         <div className='w-1/5 bg-red-200 p-2'>
                             <p className='text-lg'>Name: <b>Momentum Trading</b></p>
