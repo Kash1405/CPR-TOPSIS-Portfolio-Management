@@ -3,10 +3,10 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
-function NewsAlerts() {
+function RecommendedNews() {
     return (
         <div className='p-4'>
-            <p className='font-bold mb-4'>News Alerts</p>
+            <p className='font-bold mb-4'>Recommended News</p>
             <div className='flex w-100 justify-between border-2 border-black rounded-lg h-8 pt-0 pb-1 px-4 mb-2'>
                 <div className="flex">
                     <p className='mr-2'>Jan 1 | 12:00</p>
@@ -50,4 +50,4 @@ function NewsAlerts() {
     )
 }
 
-export default NewsAlerts
+export default RecommendedNews

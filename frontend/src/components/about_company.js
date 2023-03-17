@@ -5,6 +5,7 @@ function About() {
         <div>
             {/* About Box  */}
             <div>
+                <p className='font-bold mb-2'>Details</p>
                 <div className='flex justify-between w-3/4 mx-auto pl-24 pb-2 border-b-2'>
                     <p className='w-1/4 font-bold'>Exchange</p>
                     <p className='w-1/4'>NASDAQ</p>

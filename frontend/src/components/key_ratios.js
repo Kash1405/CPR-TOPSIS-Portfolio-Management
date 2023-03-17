@@ -3,7 +3,7 @@ import React from 'react'
 function KeyRatios() {
     return (
         <div className='w-2/5'>
-            {/* Key Ratios */}
+            <p className='font-bold mb-2'>Key Ratios</p>
             {
                 keyRatios.map((keyRatio) =>
                     <div className='flex w-full border-b-2'>
