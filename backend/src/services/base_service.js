@@ -8,7 +8,8 @@ class Base {
     }
 
     createMany({ list }) {
-        return this.model.insertMany(list);
+        console.log(typeof [...list])
+        return this.model.insertMany([...list]);
     }
 
     async findOne({ query = {}, populate = [] }) {

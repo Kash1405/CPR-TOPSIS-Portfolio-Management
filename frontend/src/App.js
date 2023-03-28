@@ -4,7 +4,8 @@ import "./App.css";
 
 import Dashboard from "./pages/Dashboard";
 import Strategy from './pages/Strategy';
-import Company from './pages/Company'
+import Portfolio from './pages/Portfolio';
+import Company from './pages/Company';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route exact path="/company">
           <Company />
+        </Route>
+        <Route exact path="/portfolio">
+          <Portfolio />
         </Route>
       </Switch>
     </Router>
