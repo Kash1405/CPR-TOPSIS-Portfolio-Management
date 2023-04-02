@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import Strategy from './pages/Strategy';
 import Portfolio from './pages/Portfolio';
 import Company from './pages/Company';
+import Login from './pages/Login';
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -13,6 +15,12 @@ function App() {
       <Switch>
         <Route exact path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/signup">
+          <Signup />
         </Route>
         <Route exact path="/strategy">
           <Strategy />
