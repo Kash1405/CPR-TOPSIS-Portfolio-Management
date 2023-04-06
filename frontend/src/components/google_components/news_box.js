@@ -5,9 +5,9 @@ import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 function NewsBox() {
     return (
-        <div>
-            <p>Your Watchlist in the News</p>
-            <div className='mt-4 flex border-b-2 px-8 py-2 w-2/5'>
+        <div className='m-5 p-5' >
+            <p className='font-bold'>Your Watchlist in the News</p>
+            <div className='m-4 flex  justify-around border-t-2 px-10 py-4 '>
                 <div className='mr-8'>
                     <div className='flex mb-2'>
                         <p className='text-xs mr-3'>Bloomberg.com</p>
@@ -28,7 +28,7 @@ function NewsBox() {
                 </div>
                 <img src="https://picsum.photos/100/50" />
             </div>
-            <div className='mt-4 flex border-b-2 px-8 py-2 w-2/5'>
+            <div className='m-4 flex  justify-around  border-t-2 px-10 py-4'>
                 <div className='mr-8'>
                     <div className='flex mb-2'>
                         <p className='text-xs mr-3'>Bloomberg.com</p>
@@ -49,7 +49,7 @@ function NewsBox() {
                 </div>
                 <img src="https://picsum.photos/100/50" />
             </div>
-            <div className='mt-4 flex border-b-2 px-8 py-2 w-2/5'>
+            <div className='m-4 flex  justify-around border-b-2 border-t-2 px-10 py-4'>
                 <div className='mr-8'>
                     <div className='flex mb-2'>
                         <p className='text-xs mr-3'>Bloomberg.com</p>
@@ -71,6 +71,7 @@ function NewsBox() {
                 <img src="https://picsum.photos/100/50" />
             </div>
         </div>
+
 
     )
 }

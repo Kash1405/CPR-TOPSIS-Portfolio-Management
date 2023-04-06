@@ -1,18 +1,18 @@
 import React from 'react'
-
+import bg from '../components/backdrop.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 function RecommendedStocks() {
     return (
-        <div className='px-10 pb-2 h-auto border-2 border-black rounded-xl ml-2'>
-            <p className='text-center font-bold mb-4'>Recommended Stocks</p>
+        <div className='px-10 pb-2 h-auto border-2 border-black rounded-xl ml-2 ' style={{ backgroundImage: `url(${bg})`}}>
+            <p className='text-center font-bold mb-4 text-white'>Recommended Stocks</p>
             {
                 stockData.map((data) =>
-                    <div className='flex w-96 justify-between border-2 border-black rounded-lg h-8 py-1 px-2 mb-2'>
+                    <div className={data.icon === faArrowDown ?'flex w-96 justify-between border-2  bg-red-50 border-red-500 rounded-lg h-8 py-1 px-2 mb-2': 'flex w-96 justify-between border-2  bg-green-50 border-green-500 rounded-lg h-8 py-1 px-2 mb-2'}>
                         <p>{data.name}</p>
                         <div className="flex -mt-1">
-                            <FontAwesomeIcon className={data.icon === faArrowDown ? "mt-1 text-red-500" : "mt-1 text-green-500"} icon={data.icon} />
+                            <FontAwesomeIcon className={data.icon === faArrowDown ? "mt-1 text-red-500 border-red-500" : "mt-1 text-green-500"} icon={data.icon} />
                             <p className='ml-3'>{data.price}</p>
                         </div>
                     </div>

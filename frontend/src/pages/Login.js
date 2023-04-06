@@ -1,12 +1,20 @@
 import React from 'react'
+import bg from '../components/backdrop.jpg';
+import Logo from "../components/Logo.png"
 
 function Login() {
     return (
-        <div classNameName="flex h-screen bg-indigo-700">
-            <p>Login</p>
-            <div className="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
+        <div className='bg-cover bg-center  p-20' style={{ backgroundImage: `url(${bg})`}}>
+
+
+<div classNameName="flex h-screen" >
+    <div className='flex m-5 justify-center '>
+    <p className='text-white font-sans text-center p-5 bg-pink-700 w-1/5 rounded text-xl' >LogIn</p>
+    </div>
+            
+            <div className="w-full max-w-xs m-auto bg-indigo-100  rounded p-5">
                 <header>
-                    <img className="w-20 mx-auto mb-5" src="https://img.icons8.com/fluent/344/year-of-tiger.png" />
+                    <img className="w-28 mx-auto mb-5" src={Logo} />
                 </header>
                 <form>
                     <div>
@@ -26,6 +34,8 @@ function Login() {
                     <a className="text-indigo-700 hover:text-pink-700 text-sm float-right" href="#">Create Account</a>
                 </footer>
             </div>
+        </div>
+
         </div>
     )
 }
