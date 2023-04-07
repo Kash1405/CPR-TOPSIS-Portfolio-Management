@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/strategy">
           <Strategy />
         </Route>
-        <Route exact path="/company">
+        <Route exact path="/company/:ticker">
           <Company />
         </Route>
         <Route exact path="/portfolio">

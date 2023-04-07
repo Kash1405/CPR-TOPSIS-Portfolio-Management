@@ -1,16 +1,51 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import NewsAlerts from '../components/recommended_news'
-// import CompanyRecentTrends from '../components/company_recent_trends';
 import About from '../components/about_company'
 import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
 import KeyRatios from '../components/key_ratios';
+import { useParams } from 'react-router-dom';
 
-function Dashboard() {
+function Company() {
+    const { ticker } = useParams()
+    const [stockData, setStockData] = useState(null);
+    const [financialData, setFinancialData] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const companyResponse = await axios.get(`https://www.alphavantage.co/query`, {
+                    params: {
+                        function: 'OVERVIEW',
+                        symbol: ticker,
+                        apikey: '1B795HAEHEB3OKBI',
+                    },
+                });
+
+                const globalQuoteResponse = await axios.get(`https://www.alphavantage.co/query`, {
+                    params: {
+                        function: 'GLOBAL_QUOTE',
+                        symbol: ticker,
+                        apikey: '1B795HAEHEB3OKBI',
+                    },
+                });
+
+                setFinancialData(companyResponse.data);
+                setStockData(globalQuoteResponse.data['Global Quote']);
+                console.log({
+                    financialData: companyResponse.data,
+                    stockData: globalQuoteResponse.data['Global Quote']
+                })
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchData();
+    }, []);
     return (
-        <div className="flex">
+        stockData ? <div className="flex">
             <Sidebar />
             <div className="w-4/5">
                 <Topbar />
@@ -19,57 +54,53 @@ function Dashboard() {
                     <div className='flex mb-8 '>
                         <a href="http://apple.com" >
                             <img className="h-30 w-20 m-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" />
-                            </a>
+                        </a>
                         <div className='flex bg-gray-200 border-gray-300 border-2 w-44 p-2 h-20 m-7 ml-20 rounded-md p-3 justify-center'>
                             {/* <img className="h-10 w-10 mt-1" src="https://media.istockphoto.com/id/1300548408/vector/growth-arrow-icon-green-arrow-up.jpg?s=612x612&w=0&k=20&c=n0NzPDJaU3bs9gVUT7_L-0Sf4Y5EtpYgfY2dM14fVW4=" /> */}
                             <div className='text-center'>
-                                <p className='font-bold'>AAPL</p>
-                                <p>USD {100} <span className='font-bold'>(2.02%)</span></p>
+                                <p className='font-bold'>{stockData['01. symbol']}</p>
+                                <p> USD {Number(stockData['05. price']).toFixed(2)} <span className='font-bold'>(  {Number(stockData['09. change']).toFixed(2)})</span></p>
                             </div>
                         </div>
                         <button onClick={() => alert("Stock Added!")} className=' right-10 top-10 absolute rounded-full bg-gray-200 border-2 border-green-400 w-36 mt-6 h-10 px-4 ml-10'>Add to List</button>
                     </div>
 
                     <div>
-                <div className='flex justify-between w-3/4 mx-auto pl-24 pb-2 border-b-2'>
-                    <p className='w-1/4 font-bold'>Company</p>
-                    <p className='w-1/4'>Apple</p>
+                        <div className='flex justify-between w-3/4 mx-auto pl-24 pb-2 border-b-2'>
+                            <p className='w-1/4 font-bold'>Company</p>
+                            <p className='w-1/4'>{financialData.Name}</p>
 
-                    <p className='w-1/4 font-bold'>Exchange</p>
-                    <p className='w-1/4'>NASDAQ</p>
+                            <p className='w-1/4 font-bold'>Exchange</p>
+                            <p className='w-1/4'>{financialData.Exchange}</p>
 
-                    <p className='w-1/4 font-bold'>Ticker</p>
-                    <p className='w-1/4'>AAPL</p>
+                            <p className='w-1/4 font-bold'>Ticker</p>
+                            <p className='w-1/4'>{financialData.Symbol}</p>
 
-                    <p className='w-1/4 font-bold'>Type</p>
-                    <p className='w-1/4'>Common Stock</p>
-                </div>
-                <div className='flex justify-between w-3/4 pl-24 mx-auto pt-2'>
-                <p className='w-1/4 font-bold'>Headquarters</p>
-                    <p className='w-1/4'>California</p>
-                    
-                    <p className='w-1/4 font-bold'>Sector</p>
-                    <p className='w-1/4'>Technology</p>
+                            <p className='w-1/4 font-bold'>Type</p>
+                            <p className='w-1/4'>{financialData.AssetType}</p>
+                        </div>
+                        <div className='flex justify-between w-3/4 pl-24 mx-auto pt-2'>
+                            <p className='w-1/4 font-bold'>Headquarters</p>
+                            <p className='w-1/4'>{financialData.Country}</p>
 
-                    <p className='w-1/4 font-bold'>Industry</p>
-                    <p className='w-1/4'>Consumer Electronics</p>
+                            <p className='w-1/4 font-bold'>Sector</p>
+                            <p className='w-1/4'>{financialData.Sector}</p>
 
-                    <p className='w-1/4 font-bold'>Established</p>
-                    <p className='w-1/4'>1990</p>
-                </div>
-            </div>
+                            <p className='w-1/4 font-bold'>Industry</p>
+                            <p className='w-1/4'>{financialData.Industry}</p>
+
+                            <p className='w-1/4 font-bold'>Established</p>
+                            <p className='w-1/4'>1990</p>
+                        </div>
+                    </div>
                     <div className='flex flex-row justify-around '>
-                    <div className='m-5 w-2/5 bg-blue-50 p-5'>
-                    <About />
+                        <div className='m-5 w-2/5 bg-blue-50 p-5'>
+                            <About text={financialData.Description} />
+                        </div>
+                        <div className='m-5 w-2/5'>
+                            <KeyRatios financialData={financialData} />
+                        </div>
                     </div>
-                    <div className='m-5 w-2/5'>
-                    <KeyRatios />
-                    </div>
-                    </div>
-                    
-                    
-                    
-
 
                     <NewsAlerts />
                     <div className='my-8'>
@@ -88,17 +119,17 @@ function Dashboard() {
                             }
                         </div>
                     </div>
-                    
-                    
+
+
                     {/* <CompanyRecentTrends /> */}
-                    
+
                 </div>
             </div>
-        </div >
+        </div > : ""
     )
 }
 
-export default Dashboard
+export default Company
 
 const relatedStocks = [
     {

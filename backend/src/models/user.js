@@ -1,21 +1,17 @@
 const mongoose = require('mongoose');
+const { ObjectId } = require('mongodb');
 
 class User {
     constructor() {
         const UserSchema = new mongoose.Schema({
-            // username: {
-            //     type: String,
-            //     unique: true,
-            // },
             email: {
                 type: String,
                 unique: true,
             },
-            // firstName: String,
-            // lastName: String,
             password: String,
-            // gender: { type: String, enum: ['male', 'female', 'non-binary'] },
-            // profilePhoto: String,
+            portfolio: [{ type: ObjectId, ref: 'Company' }],
+            watchlist: [{ type: ObjectId, ref: 'Company' }],
+            currentValue: Number
         }, { timestamps: true });
 
         this.model = mongoose.model('Users', UserSchema);

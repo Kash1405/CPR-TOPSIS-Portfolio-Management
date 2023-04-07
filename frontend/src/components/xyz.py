@@ -1,45 +1,62 @@
-# Prim's Algorithm in Python
-
-
-INF = 9999999
-# number of vertices in graph
-V = 5
-# create a 2d array of size 5x5
-# for adjacency matrix to represent graph
-G = [[0, 9, 75, 0, 0],
-     [9, 0, 95, 19, 42],
-     [75, 95, 0, 51, 66],
-     [0, 19, 51, 0, 31],
-     [0, 42, 66, 31, 0]]
-# create a array to track selected vertex
-# selected will become true otherwise false
-selected = [0, 0, 0, 0, 0]
-# set number of edge to 0
-no_edge = 0
-# the number of egde in minimum spanning tree will be
-# always less than(V - 1), where V is number of vertices in
-# graph
-# choose 0th vertex and make it true
-selected[0] = True
-# print for edge and weight
-print("Edge : Weight\n")
-while (no_edge < V - 1):
-    # For every vertex in the set S, find the all adjacent vertices
-    #, calculate the distance from the vertex selected at step 1.
-    # if the vertex is already in the set S, discard it otherwise
-    # choose another vertex nearest to selected vertex  at step 1.
-    minimum = INF
-    x = 0
-    y = 0
-    for i in range(V):
-        if selected[i]:
-            for j in range(V):
-                if ((not selected[j]) and G[i][j]):  
-                    # not in selected and there is an edge
-                    if minimum > G[i][j]:
-                        minimum = G[i][j]
-                        x = i
-                        y = j
-    print(str(x) + "-" + str(y) + ":" + str(G[x][y]))
-    selected[y] = True
-    no_edge += 1
+{
+    "financialData": {
+        "Symbol": "AAPL",
+        "AssetType": "Common Stock",
+        "Name": "Apple Inc",
+        "Description": "Apple Inc. is an American multinational technology company that specializes in consumer electronics, computer software, and online services. Apple is the world's largest technology company by revenue (totalling $274.5 billion in 2020) and, since January 2021, the world's most valuable company. As of 2021, Apple is the world's fourth-largest PC vendor by unit sales, and fourth-largest smartphone manufacturer. It is one of the Big Five American information technology companies, along with Amazon, Google, Microsoft, and Facebook.",
+        "CIK": "320193",
+        "Exchange": "NASDAQ",
+        "Currency": "USD",
+        "Country": "USA",
+        "Sector": "TECHNOLOGY",
+        "Industry": "ELECTRONIC COMPUTERS",
+        "Address": "ONE INFINITE LOOP, CUPERTINO, CA, US",
+        "FiscalYearEnd": "September",
+        "LatestQuarter": "2022-12-31",
+        "MarketCapitalization": "2620596945000",
+        "EBITDA": "125287997000",
+        "PERatio": "27.77",
+        "PEGRatio": "2.75",
+        "BookValue": "3.581",
+        "DividendPerShare": "0.91",
+        "DividendYield": "0.0056",
+        "EPS": "5.93",
+        "RevenuePerShareTTM": "24.08",
+        "ProfitMargin": "0.246",
+        "OperatingMarginTTM": "0.294",
+        "ReturnOnAssetsTTM": "0.196",
+        "ReturnOnEquityTTM": "1.479",
+        "RevenueTTM": "387537011000",
+        "GrossProfitTTM": "170782000000",
+        "DilutedEPSTTM": "5.93",
+        "QuarterlyEarningsGrowthYOY": "-0.105",
+        "QuarterlyRevenueGrowthYOY": "-0.055",
+        "AnalystTargetPrice": "170.29",
+        "TrailingPE": "27.77",
+        "ForwardPE": "23.09",
+        "PriceToSalesRatioTTM": "5.51",
+        "PriceToBookRatio": "44.63",
+        "EVToRevenue": "5.92",
+        "EVToEBITDA": "17.53",
+        "Beta": "1.297",
+        "52WeekHigh": "175.59",
+        "52WeekLow": "123.98",
+        "50DayMovingAverage": "153.4",
+        "200DayMovingAverage": "149.13",
+        "SharesOutstanding": "15821900000",
+        "DividendDate": "2023-02-16",
+        "ExDividendDate": "2023-02-10"
+    },
+    "stockData": {
+        "01. symbol": "AAPL",
+        "02. open": "162.4300",
+        "03. high": "164.9584",
+        "04. low": "162.0000",
+        "05. price": "164.6600",
+        "06. volume": "45390123",
+        "07. latest trading day": "2023-04-06",
+        "08. previous close": "163.7600",
+        "09. change": "0.9000",
+        "10. change percent": "0.5496%"
+    }
+}
