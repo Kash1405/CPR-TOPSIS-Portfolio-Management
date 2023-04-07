@@ -8,11 +8,15 @@ import Portfolio from './pages/Portfolio';
 import Company from './pages/Company';
 import Login from './pages/Login';
 import Signup from "./pages/Signup";
+import Visualization from './pages/Visualization'
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path='/visualization'>
+          <Visualization />
+        </Route>
         <Route exact path="/dashboard">
           <Dashboard />
         </Route>
