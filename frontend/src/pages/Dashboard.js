@@ -2,10 +2,9 @@ import React from 'react'
 
 import PortfolioChart from "../components/portfolio_chart";
 import RecommendedStocks from "../components/recommended_stocks";
-import RecommendedNews from "../components/recommended_news";
 import Sidebar from '../components/sidebar';
+import NewsBox from '../components/google_components/news_box'
 import Topbar from '../components/topbar';
-import NewsAlerts from "../components/news_alerts";
 
 
 function Dashboard() {
@@ -20,8 +19,8 @@ function Dashboard() {
                         <RecommendedStocks />
                     </div>
                     <div className="">
-                        <RecommendedNews />
-                        <NewsAlerts />
+                        <NewsBox />
+                        {/* <NewsAlerts /> */}
                     </div>
                 </div>
             </div>

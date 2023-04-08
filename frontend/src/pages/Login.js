@@ -4,10 +4,6 @@ import bg from '../components/backdrop.jpg';
 import Logo from "../components/Logo.png"
 
 const logInHandler = async (username, password) => {
-    console.log({
-        username,
-        password
-    })
     if (username === '' || password === '') {
         alert("Please fill the empty fields and try again!")
     }
@@ -22,11 +18,11 @@ const logInHandler = async (username, password) => {
         await axios.post('http://localhost:8080/v1/access/login', userDeatils)
             .then(res => user = res.data)
             .catch(err => console.log(err))
-            .then(alert('Account Logged In'))
+            .then(console.log(user))
 
         localStorage.setItem('user', JSON.stringify(user))
-        // window.location.reload()
-        // window.location.href = '/'
+        window.location.reload()
+        window.location.href = '/dashboard'
     }
 }
 
@@ -55,7 +51,10 @@ function Login() {
                             <input onChange={(e) => setPassword(e.target.value)} className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="password" name="password" />
                         </div>
                         <div>
-                            <input onClick={() => logInHandler(username, password)} className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded" type="submit" />
+                            <input onClick={(e) => {
+                                e.preventDefault()
+                                logInHandler(username, password)
+                            }} className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded" type="submit" />
                         </div>
                     </form>
                     <footer>

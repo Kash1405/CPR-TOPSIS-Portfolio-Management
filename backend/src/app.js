@@ -34,6 +34,7 @@ module.exports = () => {
     app.use('/v1/user', routers.userRouter);
     app.use('/v1/access', routers.accessRouter);
     app.use('/v1/company', routers.companyRouter);
+    app.use('/v1/news', routers.newsRouter);
 
     expressLoader.post({ app });
 
