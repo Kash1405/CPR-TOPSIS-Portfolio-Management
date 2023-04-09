@@ -26,19 +26,12 @@ class CompanyController {
     }
 
     async findAll(req, res, next) {
-
-        let musicItems
+        let companies
 
         const { category } = req.query
 
         try {
-            musicItems = typeof (category) === 'undefined' ?
-                await this.companyService.findMany({}) :
-                await this.companyService.findMany({
-                    query: {
-                        category
-                    }
-                })
+            companies = await this.companyService.findMany({})
         }
         catch (e) {
             return next(e)
@@ -46,7 +39,7 @@ class CompanyController {
 
 
         return res.json({
-            musicItems
+            companies
         })
     }
 

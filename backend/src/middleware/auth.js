@@ -39,7 +39,7 @@ const auth = ({ accessService }) => async (req, res, next) => {
             res.locals.isStaff = user.isStaff;
             res.locals.authToken = authToken;
             next();
-            }
+        }
     } catch (e) {
         next(e);
     }

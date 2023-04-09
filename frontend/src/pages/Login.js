@@ -3,31 +3,53 @@ import axios from 'axios'
 import bg from '../components/backdrop.jpg';
 import Logo from "../components/Logo.png"
 
-const logInHandler = async (username, password) => {
-    if (username === '' || password === '') {
+const logInHandler = async (email, password) => {
+    if (email === '' || password === '') {
         alert("Please fill the empty fields and try again!")
     }
     else {
         let user
-        let email = username
         const userDeatils = {
             email,
             password
         }
 
-        await axios.post('http://localhost:8080/v1/access/login', userDeatils)
-            .then(res => user = res.data)
-            .catch(err => console.log(err))
-            .then(console.log(user))
+        console.log({
+            email,
+            password
+        })
+        let data = JSON.stringify({
+            "email": "raunak12@connect.hku.hk",
+            "password": "snubble1234"
+        });
+
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'http://localhost:8080/v1/access/login',
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            data: data
+        };
+
+        axios.request(config)
+            .then((response) => {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
 
         localStorage.setItem('user', JSON.stringify(user))
-        window.location.reload()
-        window.location.href = '/dashboard'
+        // window.location.reload()
+        // window.location.href = '/dashboard'
     }
 }
 
 function Login() {
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     return (
@@ -44,7 +66,7 @@ function Login() {
                     <form>
                         <div>
                             <label className="block mb-2 text-indigo-500" for="username">Username</label>
-                            <input onChange={(e) => setUsername(e.target.value)} className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="text" name="username" />
+                            <input onChange={(e) => setEmail(e.target.value)} className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="text" name="email" />
                         </div>
                         <div>
                             <label className="block mb-2 text-indigo-500" for="password">Password</label>
@@ -53,7 +75,7 @@ function Login() {
                         <div>
                             <input onClick={(e) => {
                                 e.preventDefault()
-                                logInHandler(username, password)
+                                logInHandler(email, password)
                             }} className="w-full bg-indigo-700 hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded" type="submit" />
                         </div>
                     </form>
