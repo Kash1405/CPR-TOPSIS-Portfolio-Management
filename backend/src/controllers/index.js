@@ -2,6 +2,7 @@ const UserController = require('./user_controller');
 const AccessController = require('./access_contoller');
 const CompanyController = require('./company_controller');
 const NewsController = require('./news_controller')
+const GraphController = require('./graph_controller');
 
 class Controllers {
     constructor(services) {
@@ -16,6 +17,7 @@ class Controllers {
             company: services.companyService,
         });
         this.newsController = new NewsController({})
+        this.graphController = new GraphController();
     }
 }
 
