@@ -3,41 +3,26 @@ import React, { useEffect, useRef } from 'react';
 import { UnrealBloomPass } from "../../node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js";
 import ForceGraph3D from 'react-force-graph-3d';
 
-const Visualization = () => {
+const Graph = () => {
     const fgRef = useRef();
 
     useEffect(() => {
         const bloomPass = new UnrealBloomPass();
-        bloomPass.strength = 5;
+        bloomPass.strength = 3;
         bloomPass.radius = 1;
         bloomPass.threshold = 0.1;
         fgRef.current.postProcessingComposer().addPass(bloomPass);
     }, []);
 
-    return (
-        <div className='flex'>
-            <div className='w-1/2'>
-                <ForceGraph3D
-                    ref={fgRef}
-                    graphData={data}
-                    nodeLabel="id"
-                    linkLabel="1"
-                    nodeRelSize={2}
-                    nodeAutoColorBy="group"
-                // width={100}
-                />;
-            </div>
-            <div className='w-1/2'>
-                <p>Hello World</p>
-            </div>
-
-
-        </div>
-    )
-
+    return <ForceGraph3D
+        ref={fgRef}
+        graphData={data}
+        nodeLabel="id"
+        nodeAutoColorBy="group"
+    />;
 }
 
-export default Visualization;
+export default Graph;
 
 
 let data = {

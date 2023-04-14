@@ -9,12 +9,16 @@ import Company from './pages/Company';
 import Login from './pages/Login';
 import Signup from "./pages/Signup";
 import CompanyList from "./pages/CompanyList";
-import Visualization from './pages/Visualization'
+import Visualization from './pages/Visualization';
+import RiskForm from "./pages/RiskForm";
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path='/riskform'>
+          <RiskForm />
+        </Route>
         <Route exact path='/company'>
           <CompanyList />
         </Route>
