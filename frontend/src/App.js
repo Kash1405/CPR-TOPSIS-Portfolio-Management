@@ -11,11 +11,15 @@ import Signup from "./pages/Signup";
 import CompanyList from "./pages/CompanyList";
 import Visualization from './pages/Visualization';
 import RiskForm from "./pages/RiskForm";
+import Result from './pages/Result'
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path='/result'>
+          <Result />
+        </Route>
         <Route exact path='/riskform'>
           <RiskForm />
         </Route>
