@@ -11,6 +11,9 @@ import rvol from '../photos/rvol.png'
 import rbeta from '../photos/rbeta.png'
 import retbench from '../photos/retbench.png'
 
+import Sidebar from '../components/sidebar';
+import Topbar from '../components/topbar';
+
 function RiskForm() {
     const photos = [
         allocation,
@@ -26,13 +29,45 @@ function RiskForm() {
     ];
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex">
+            <Sidebar />
+            <div >
+                <Topbar />
+            <div className="left-80 absolute top-20 ">
+
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/5 p-2">
+                    <img src={allocation} className="w-full h-full object-cover" />
+                </div>
+
+
+                <div className="relative w-full lg:max-w-sm">
+            <select id="Select" className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                <option>--Select Graph--</option>
+                <option>Worst 5 Drawdown Periods</option>
+                <option>Underwater Plot</option>
+                <option>Monthly Returns (%)</option>
+                <option>Rolling Volatility (6-Months)</option>
+                <option>EOY Returns vs Benchmark</option>
+                <option>Returns (6-Months)</option>
+                <option>Rolling Beta to Benchmark (6-Months)</option>
+                <option>Cumulative Returns vs Benchmark (6-Months)</option>
+            </select>
+        </div>
+
+
+
+            <div className="flex flex-wrap justify-center">
             {photos.map((photo, index) => (
                 <div key={index} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/5 p-2">
                     <img src={photo} alt={`Photo ${index + 1}`} className="w-full h-full object-cover" />
                 </div>
             ))}
         </div>
+
+                </div>
+                </div>
+            </div>
+        
     );
 }
 

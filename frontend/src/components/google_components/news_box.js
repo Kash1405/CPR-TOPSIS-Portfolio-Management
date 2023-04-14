@@ -26,8 +26,8 @@ function NewsBox() {
     // }, [])
 
     return (
-        newsData ? <div className='m-5 p-5' >
-            <p className='font-bold'>Your Watchlist in the News</p>
+        newsData ? <div className='m-5 p-5 text-white' >
+            <p className='font-bold text-lg'>Your Watchlist in the News</p>
             {
                 Array.isArray(newsData) ? newsData.slice(0, 3).map((newsItem) =>
                     <a target="_blank" href={newsItem.source} rel="noreferrer">
@@ -41,7 +41,7 @@ function NewsBox() {
                                 <div className='mb-4'>
                                     <p className='text-lg'>{newsItem.title}</p>
                                 </div>
-                                <div className='flex w-28 px-2 border-2 rounded-lg'>
+                                <div className='flex w-28 px-2 border-2 bg-green-50 text-green-500 border-green-500 rounded-lg'>
                                     <p className='text-sm'>AAPL</p>
                                     <div className="flex text-green-500 ml-3">
                                         <FontAwesomeIcon className="text-xs mt-1" icon={faArrowUp} />

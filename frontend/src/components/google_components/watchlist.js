@@ -16,7 +16,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>
@@ -26,7 +26,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>
@@ -35,7 +35,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>
@@ -44,7 +44,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>
@@ -53,7 +53,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>
@@ -62,7 +62,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>
@@ -71,7 +71,7 @@ function Watchlist() {
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
-                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-green-200 rounded-lg">
+                    <div className="flex h-10 content-center m-1 justify-around text-green-500 bg-green-200 p-1 border-2 border-green-500 rounded-lg">
                         <FontAwesomeIcon className="mt-1" icon={faArrowUp} />
                         <p>0.251</p>
                     </div>

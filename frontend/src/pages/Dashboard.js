@@ -9,16 +9,16 @@ import Topbar from '../components/topbar';
 
 function Dashboard() {
     return (
-        <div className="flex bg-black bg-cover w-screen h-screen">
+        <div className="flex" >
             <Sidebar />
-            <div className="left-80 absolute w-4/5">
+            <div className="left-80 absolute w-4/5" >
                 <Topbar />
-                <div className="flex-column scroll-smooth top-20 absolute left-40 -ml-10 py-20" >
-                    <div className="flex justify-between">
+                <div className="flex-column scroll-smooth top-20 absolute left-40 -ml-10 pr-20 pt-5 bg-black " >
+                    <div className="flex justify-between ">
                         <PortfolioChart />
                         <RecommendedStocks />
                     </div>
-                    <div className="">
+                    <div className="bg-black">
                         <NewsBox />
                         {/* <NewsAlerts /> */}
                     </div>

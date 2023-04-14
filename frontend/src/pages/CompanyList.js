@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Sidebar from '../components/sidebar';
+import Topbar from '../components/topbar';
 
 function CompanyList() {
     const [companies, setCompanies] = useState(companyData)
     return (
-        <div className='flex flex-wrap justify-between'>
+
+        <div className="flex bg-blue-50">
+        <Sidebar />
+        <div >
+            <Topbar />
+        <div className="left-80 absolute top-20 bg-black">
+        
+
+        <div className='flex flex-wrap justify-around'>
             {
                 companies ? companies.map((company) =>
-                    <div className='w-1/4 mb-2 mr-1 flex border-black border-2 p-2 rounded-xl'>
-                        <a className='flex' href={'/company/' + company.Ticker}>
+                    <div className='w-1/4 m-5 flex border-white border-2 p-2 rounded-xl justify-around shadow-lg text-white shadow-white hover:bg-yellow-600 hover:text-black'>
+                        <a className='flex m-2' href={'/company/' + company.Ticker}>
                             <div>
-                                <img className="h-10 w-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" />
+                                <img className="h-10 w-8 m-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1200px-Apple_logo_grey.svg.png" />
                             </div>
-                            <div>
-                                <p>{company.Name}</p>
+                            <div className='ml-5'>
+                                <p className='font-extrabold'>{company.Name}</p>
                                 <p> {company.Ticker}</p>
                                 <p> {company.Sector} | {company.Industry}</p>
                             </div>
@@ -21,7 +31,12 @@ function CompanyList() {
                     </div>
                 ) : ""
             }
-        </div >
+        </div>
+
+
+        </div>
+        </div>
+        </div>
     )
 }
 
