@@ -1,74 +1,387 @@
-import React from 'react';
-
-import allocation from '../photos/allocation.png'
-import d_periods from "../photos/d_periods.png"
-import drawdown from "../photos/drawdown.png"
-import heatmap from "../photos/heatmap.png"
-import rshape from "../photos/rvol.png"
-import y_return from '../photos/y_returns.png'
-import ret from '../photos/ret.png'
-import rvol from '../photos/rvol.png'
-import rbeta from '../photos/rbeta.png'
-import retbench from '../photos/retbench.png'
-
+import { useState } from 'react';
 import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
+import {Helmet} from 'react-helmet';
 
-function RiskForm() {
-    const photos = [
-        allocation,
-        d_periods,
-        drawdown,
-        heatmap,
-        rshape,
-        y_return,
-        ret,
-        rvol,
-        rbeta,
-        retbench
-    ];
 
+
+// const options = ['Option 1', 'Option 2', 'Option 3'];
+
+function Dropdown({ label, options, value, onChange }) {
+    console.log(options)
     return (
-        <div className="flex">
-            <Sidebar />
-            <div >
-                <Topbar />
-            <div className="left-80 absolute top-20 ">
-
-            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/5 p-2">
-                    <img src={allocation} className="w-full h-full object-cover" />
-                </div>
-
-
-                <div className="relative w-full lg:max-w-sm">
-            <select id="Select" className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
-                <option>--Select Graph--</option>
-                <option>Worst 5 Drawdown Periods</option>
-                <option>Underwater Plot</option>
-                <option>Monthly Returns (%)</option>
-                <option>Rolling Volatility (6-Months)</option>
-                <option>EOY Returns vs Benchmark</option>
-                <option>Returns (6-Months)</option>
-                <option>Rolling Beta to Benchmark (6-Months)</option>
-                <option>Cumulative Returns vs Benchmark (6-Months)</option>
+        
+        <div>
+            <div className="m-5 p-5 text-white border-b-2 border-yellow-600">
+            <label className="block font-bold mb-2">{label}</label>
+            <select
+                className="w-2/3 p-2 bg-black border border-white rounded shadow"
+                value={value}
+                onChange={(event) => onChange(event.target.value)}
+            >
+                <option value="">Select an option</option>
+                {options.map((option) => (
+                    <option key={option.label} value={option.label}>
+                        {option.label}
+                    </option>
+                ))}
             </select>
         </div>
 
-
-
-            <div className="flex flex-wrap justify-center">
-            {photos.map((photo, index) => (
-                <div key={index} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/5 p-2">
-                    <img src={photo} alt={`Photo ${index + 1}`} className="w-full h-full object-cover" />
-                </div>
-            ))}
         </div>
-
-                </div>
-                </div>
-            </div>
         
     );
 }
 
+function RiskForm() {
+    const [values, setValues] = useState({
+        dropdown1: '',
+        dropdown2: '',
+        dropdown3: '',
+        dropdown4: '',
+        dropdown5: '',
+        dropdown6: '',
+        dropdown7: '',
+        dropdown8: '',
+        dropdown9: '',
+        dropdown10: '',
+        dropdown11: '',
+    });
+
+    function handleChange(field, value) {
+        setValues((prevValues) => ({
+            ...prevValues,
+            [field]: value,
+        }));
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
+    return (
+        <div className="flex">
+            <Helmet>
+        <style>{'body { background-color: black; }'}</style>
+    </Helmet>
+            <Sidebar />
+            <div >
+                <Topbar />
+                <div className="left-80 absolute top-20 bg-black w-3/4 m-5 c">
+        <form onSubmit={handleSubmit}>
+            {
+                formData.map((question) =>
+                 <Dropdown
+                    options={question.options}
+                    label={question.label}
+                    value={values.dropdown1}
+                    onChange={(value) => handleChange('dropdown1', value)}
+                />
+                )
+            }
+
+<div className=' flex justify-around'>
+            <button
+                className="bg-blue-700 border-white border-2 hover:bg-yellow-700 hover:border-black hover:text-black text-white font-bold py-2 px-4 mb-40 rounded m-5 w-56 text-xl"
+                type="submit"
+                onClick={() => { window.location.href = '/result' }}
+            >
+                Submit
+            </button>
+            </div>
+        </form>
+        </div>
+        </div>
+        </div>
+
+    );
+}
+
 export default RiskForm;
+
+const formData = [
+    {
+        "label": "Sector",
+        "options": [
+            {
+                'label': 'Consumer Cyclical'
+            },
+            {
+                'label': 'Technology'
+            },
+            {
+                'label': 'Healthcare'
+            },
+            {
+                'label': 'Communication Services'
+            },
+            {
+                'label': 'Industrials'
+            }, {
+                'label': 'Consumer Defensive'
+            },
+            {
+                'label': "Real Estate"
+            },
+            {
+                'label': "Utilities"
+            },
+            {
+                'label': "Energy"
+            },
+            {
+                'label': "Financial Services"
+            }]
+    },
+    {
+        "label": "Age",
+        "options": [
+            {
+                "label": "Under 25",
+                "value": 5
+            },
+            {
+                "label": "25-40",
+                "value": 4
+            },
+            {
+                "label": "40-55",
+                "value": 3
+            },
+            {
+                "label": "55-70",
+                "value": 2
+            },
+            {
+                "label": "Over 70",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "label": "Income level",
+        "options": [
+            {
+                "label": "Less than $50,000",
+                "value": 1
+            },
+            {
+                "label": "$50,000 - $100,000",
+                "value": 2
+            },
+            {
+                "label": "$100,000 - $250,000",
+                "value": 3
+            },
+            {
+                "label": "$250,000 - $500,000",
+                "value": 4
+            },
+            {
+                "label": "Over $500,000",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Investment experience",
+        "options": [
+            {
+                "label": "No experience",
+                "value": 1
+            },
+            {
+                "label": "Some experience, but not a lot",
+                "value": 2
+            },
+            {
+                "label": "Moderate amount of experience",
+                "value": 3
+            },
+            {
+                "label": "Extensive investment experience",
+                "value": 4
+            },
+            {
+                "label": "Professional investor",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Investment timeframe",
+        "options": [
+            {
+                "label": "Less than 3 years",
+                "value": 1
+            },
+            {
+                "label": "3-5 years",
+                "value": 2
+            },
+            {
+                "label": "5-10 years",
+                "value": 3
+            },
+            {
+                "label": "10-20 years",
+                "value": 4
+            },
+            {
+                "label": "More than 20 years",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Primary investment goal",
+        "options": [
+            {
+                "label": "Preservation of capital",
+                "value": 1
+            },
+            {
+                "label": "Income generation",
+                "value": 2
+            },
+            {
+                "label": "Growth with minimal risk",
+                "value": 3
+            },
+            {
+                "label": "High growth potential",
+                "value": 4
+            },
+            {
+                "label": "Speculative investments",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Reaction to a 20% decrease in portfolio value",
+        "options": [
+            {
+                "label": "Extremely anxious",
+                "value": 1
+            },
+            {
+                "label": "Somewhat anxious",
+                "value": 2
+            },
+            {
+                "label": "Neutral",
+                "value": 3
+            },
+            {
+                "label": "Somewhat comfortable",
+                "value": 4
+            },
+            {
+                "label": "Extremely comfortable",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Comfort level with portfolio loss",
+        "options": [
+            {
+                "label": "None",
+                "value": 1
+            },
+            {
+                "label": "Up to 5%",
+                "value": 2
+            },
+            {
+                "label": "Up to 10%",
+                "value": 3
+            },
+            {
+                "label": "Up to 20%",
+                "value": 4
+            },
+            {
+                "label": "More than 20%",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Importance of beating the market",
+        "options": [
+            {
+                "label": "Not at all important",
+                "value": 1
+            },
+            {
+                "label": "Somewhat important",
+                "value": 2
+            },
+            {
+                "label": "Moderately important",
+                "value": 3
+            },
+            {
+                "label": "Very important",
+                "value": 4
+            },
+            {
+                "label": "Extremely important",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Importance of stable and predictable returns",
+        "options": [
+            {
+                "label": "Not at all important",
+                "value": 1
+            },
+            {
+                "label": "Somewhat important",
+                "value": 2
+            },
+            {
+                "label": "Moderately important",
+                "value": 3
+            },
+            {
+                "label": "Very important",
+                "value": 4
+            },
+            {
+                "label": "Extremely important",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "label": "Overall attitude towards risk",
+        "options": [
+            {
+                "label": "Extremely risk-averse",
+                "value": 1
+            },
+            {
+                "label": "Somewhat risk-averse",
+                "value": 2
+            },
+            {
+                "label": "Neutral",
+                "value": 3
+            },
+            {
+                "label": "Somewhat risk-tolerant",
+                "value": 4
+            },
+            {
+                "label": "Extremely risk-tolerant",
+                "value": 5
+            }
+        ]
+    }
+
+]

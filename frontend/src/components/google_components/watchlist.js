@@ -8,11 +8,11 @@ function Watchlist() {
             <p className='text-xl text-white font-bold'>Watchlist</p>
 
 
-            <div className=' mt-5 flex overflow-x-auto border-2 rounded-xl border-white w-[65rem] bg-white '>
+            <div className=' mt-5 flex overflow-x-auto border-2 rounded-xl border-yellow-600 w-[65rem] bg-white '>
                 
                 
                 
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
@@ -22,7 +22,7 @@ function Watchlist() {
                     </div>
                 </div>
 
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
@@ -31,7 +31,7 @@ function Watchlist() {
                         <p>0.251</p>
                     </div>
                 </div>
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
@@ -40,7 +40,7 @@ function Watchlist() {
                         <p>0.251</p>
                     </div>
                 </div>
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
@@ -49,7 +49,7 @@ function Watchlist() {
                         <p>0.251</p>
                     </div>
                 </div>
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
@@ -58,7 +58,7 @@ function Watchlist() {
                         <p>0.251</p>
                     </div>
                 </div>
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>
@@ -67,7 +67,7 @@ function Watchlist() {
                         <p>0.251</p>
                     </div>
                 </div>
-                <div className='flex border-r-2 border-white p-2 bg-black items-center justify-center'>
+                <div className='flex border-r-2 border-yellow-600 p-2 bg-black items-center justify-center'>
                     <p className='text-400 text-white font-medium mr-3'>Dow Jones Industrial Index</p>
                     <p className='font-bold text-white mr-3'>$32,237.53</p>
                     <p className='font-bold text-white mr-3 '>+132.28</p>

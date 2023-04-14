@@ -55,11 +55,11 @@ function KeyRatios(props) {
 
     ]
     return (
-        <div className='m-5 bg-blue-50 p-5'>
+        <div className='m-5 p-5'>
             <p className='font-bold mb-2'>Key Ratios</p>
             {
                 ratios.map((keyRatio) =>
-                    <div className='flex w-full border-b-2'>
+                    <div className='flex w-full border-b-2 mt-2 border-yellow-600'>
                         <p className='font-bold w-1/2'><a target="_blank" href={keyRatio.link} rel="noreferrer">{keyRatio.ratio}</a></p>
                         <p className=''>{keyRatio.value}</p>
                     </div>)

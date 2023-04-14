@@ -5,7 +5,7 @@ import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 function RecommendedStocks() {
     return (
-        <div className='px-10 pt-5 pb-2 h-auto border-2 border-white rounded-xl ml-2 ' style={{ backgroundImage: `url(${bg})`}}>
+        <div className='px-10 pt-5 pb-2 h-auto border-2 border-yellow-600 rounded-xl ml-2 ' style={{ backgroundImage: `url(${bg})`}}>
             <p className='text-center font-bold mb-4 text-white'>Recommended Stocks</p>
             {
                 stockData.map((data) =>

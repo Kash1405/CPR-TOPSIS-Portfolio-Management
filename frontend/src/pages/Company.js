@@ -6,6 +6,7 @@ import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
 import KeyRatios from '../components/key_ratios';
 import { useParams } from 'react-router-dom';
+import {Helmet} from 'react-helmet';
 
 function Company() {
     const { ticker } = useParams()
@@ -45,28 +46,31 @@ function Company() {
         fetchData();
     }, []);
     return (
-        stockData ? <div className="flex">
+        stockData ? <div className="flex ">
+            <Helmet>
+        <style>{'body { background-color: black; }'}</style>
+    </Helmet>
             <Sidebar />
             <div className="w-4/5">
                 <Topbar />
-                <div className="flex-column scroll-smooth p-4  left-80 absolute top-20">
+                <div className="flex-column scroll-smooth p-4  left-80 absolute top-20 text-white">
 
                     <div className='flex mb-8 '>
                         <a href="http://apple.com" >
-                            <img className="h-30 w-20 m-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" />
+                            <img className="h-30 w-20 m-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1200px-Apple_logo_grey.svg.png" />
                         </a>
-                        <div className='flex bg-gray-200 border-gray-300 border-2 w-44 p-2 h-20 m-7 ml-20 rounded-md p-3 justify-center'>
+                        <div className='flex bg-black border-yellow-600 border-2 w-44 p-2 h-20 m-7 ml-20 rounded-md p-3 justify-center'>
                             {/* <img className="h-10 w-10 mt-1" src="https://media.istockphoto.com/id/1300548408/vector/growth-arrow-icon-green-arrow-up.jpg?s=612x612&w=0&k=20&c=n0NzPDJaU3bs9gVUT7_L-0Sf4Y5EtpYgfY2dM14fVW4=" /> */}
                             <div className='text-center'>
                                 <p className='font-bold'>{stockData['01. symbol']}</p>
                                 <p> USD {Number(stockData['05. price']).toFixed(2)} <span className='font-bold'>(  {Number(stockData['09. change']).toFixed(2)})</span></p>
                             </div>
                         </div>
-                        <button onClick={() => alert("Stock Added!")} className=' right-10 top-10 absolute rounded-full bg-gray-200 border-2 border-green-400 w-36 mt-6 h-10 px-4 ml-10'>Add to List</button>
+                        <button onClick={() => alert("Stock Added!")} className=' right-10 top-10 absolute rounded-full bg-black border-2 border-yellow-600 shadow-md shadow-yellow-500 w-36 mt-6 h-10 px-4 ml-10 hover:bg-yellow-600 hover:text-black hover:shadow-none'>Add to List</button>
                     </div>
 
                     <div>
-                        <div className='flex justify-between w-3/4 mx-auto pl-24 pb-2 border-b-2'>
+                        <div className='flex justify-between w-3/4 mx-auto pl-24 pb-2 border-b-2 border-yellow-600'>
                             <p className='w-1/4 font-bold'>Company</p>
                             <p className='w-1/4'>{financialData.Name}</p>
 
@@ -94,21 +98,21 @@ function Company() {
                         </div>
                     </div>
                     <div className='flex flex-row justify-around '>
-                        <div className='m-5 w-2/5 bg-blue-50 p-5'>
+                        <div className='m-5 w-2/5 bg-black  border-yellow-600 p-5'>
                             <About text={financialData.Description} />
                         </div>
-                        <div className='m-5 w-2/5'>
+                        <div className='m-5 w-2/5 bg-black border-yellow-600'>
                             <KeyRatios financialData={financialData} />
                         </div>
                     </div>
 
                     <NewsAlerts />
-                    <div className='my-8'>
+                    <div className='my-8 ml-5'>
                         <p className='font-bold mb-4'>Related Stocks</p>
                         <div className='flex justify-between px-24'>
                             {
                                 relatedStocks.map((relatedStock) => (
-                                    <div className='flex bg-gray-200 border-gray-300 border-2 w-fit px-3 py-2 rounded-md mr-4'>
+                                    <div className='flex bg-black border-2 border-yellow-600 w-fit px-3 py-2 rounded-md mr-4 shadow-md shadow-yellow-600 hover:bg-yellow-600 hover:text-black hover:shadow-none'>
                                         <img className="h-10 w-10 mt-1" src="https://media.istockphoto.com/id/1300548408/vector/growth-arrow-icon-green-arrow-up.jpg?s=612x612&w=0&k=20&c=n0NzPDJaU3bs9gVUT7_L-0Sf4Y5EtpYgfY2dM14fVW4=" />
                                         <div className='ml-4 text-center'>
                                             <p className='font-bold'>{relatedStock.company}</p>

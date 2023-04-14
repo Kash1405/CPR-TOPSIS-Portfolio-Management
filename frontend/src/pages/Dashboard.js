@@ -1,4 +1,5 @@
 import React from 'react'
+import {Helmet} from 'react-helmet';
 
 import PortfolioChart from "../components/portfolio_chart";
 import RecommendedStocks from "../components/recommended_stocks";
@@ -9,7 +10,11 @@ import Topbar from '../components/topbar';
 
 function Dashboard() {
     return (
-        <div className="flex" >
+        
+        <div className="flex " >
+            <Helmet>
+        <style>{'body { background-color: black; }'}</style>
+    </Helmet>
             <Sidebar />
             <div className="left-80 absolute w-4/5" >
                 <Topbar />

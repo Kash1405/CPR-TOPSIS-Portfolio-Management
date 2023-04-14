@@ -9,7 +9,7 @@ function RelatedWatchlist() {
             <p className='font-bold text-white'>Related to your Watchlist</p>
             
             <div className='m-4 flex justify-around'>
-            <div className=' divide-x-2  flex w-[50rem] p-4 bg-blue-50 border-2 border-white overflow-x-auto rounded-xl bg-black '>
+            <div className=' divide-x-2 divide-yellow-600  flex w-[50rem] p-4 bg-blue-50 border-2 border-yellow-600 overflow-x-auto rounded-xl bg-black '>
                 
                 
                 <div className='flex p-2 '>

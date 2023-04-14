@@ -9,12 +9,17 @@ import Topbar from '../components/topbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
-
+import {Helmet} from 'react-helmet';
 
 
 function Portfolio() {
     return (
         <div className="flex">
+
+
+<Helmet>
+        <style>{'body { background-color: black; }'}</style>
+    </Helmet>
             <Sidebar />
             <div >
                 <Topbar />
@@ -22,7 +27,7 @@ function Portfolio() {
             <div className=" flex " >
             <Watchlist />
             </div>
-            <div className=" place-content-stretch content-between bg-black">
+            <div className=" place-content-stretch content-between">
             <NewsBox />
             </div >
             <div   >

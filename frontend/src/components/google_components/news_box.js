@@ -31,7 +31,7 @@ function NewsBox() {
             {
                 Array.isArray(newsData) ? newsData.slice(0, 3).map((newsItem) =>
                     <a target="_blank" href={newsItem.source} rel="noreferrer">
-                        <div className='m-4 flex border-t-2 px-10 py-4'>
+                        <div className='m-4 flex border-t-2 border-yellow-600 px-10 py-4'>
                             <div className='mr-8'>
                                 <div className='flex mb-2'>
                                     <p className='text-xs mr-3'>Yahoo Finance</p>
