@@ -15,14 +15,11 @@ class Routers {
             controllers.companyController,
             auth
         );
-<<<<<<< HEAD
         this.newsRouter = newsRouter(
             controllers.newsController,
             auth
         )
-=======
         this.graphRouter = graphRouter(controllers.graphController);
->>>>>>> f8655e20eff0e97cee0d0f9eff9b1647f5b749e6
     }
 }
 

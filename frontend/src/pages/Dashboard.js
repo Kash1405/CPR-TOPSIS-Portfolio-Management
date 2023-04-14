@@ -9,7 +9,7 @@ import Topbar from '../components/topbar';
 
 function Dashboard() {
     return (
-        <div className="flex">
+        <div className="flex bg-black bg-cover w-screen h-screen">
             <Sidebar />
             <div className="left-80 absolute w-4/5">
                 <Topbar />

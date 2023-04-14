@@ -14,7 +14,7 @@ import { faArrowUp, faArrowDown, faCirclePlus } from '@fortawesome/free-solid-sv
 
 function Portfolio() {
     return (
-        <div className="flex" >
+        <div className="flex bg-black bg-cover w-screen h-screen" >
             <Sidebar />
             <div>
                 <Topbar />

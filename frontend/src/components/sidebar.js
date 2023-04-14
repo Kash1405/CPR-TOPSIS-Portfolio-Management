@@ -6,7 +6,7 @@ import { faHome, faFire, faHeart, faBriefcase, faChartLine, faBook } from '@fort
 
 function Sidebar() {
     return (
-        <div className="w-80 h-screen px-10 py-5 fixed border-gray-300 border-r-2 bg-gradient-to-b from-blue-500 to-transparent" >
+        <div className="w-80 h-screen px-10 py-5 fixed border-yellow-600 border-r-2 bg-black " >
             <div className='flex  justify-evenly '>
                 <img src={Logo} alt="ATX" width={150} height={500} />
             </div>
@@ -20,30 +20,31 @@ function Sidebar() {
             </div>
 
             <div className='mt-10 ml-8'>
-                <div className="flex h-12">
+            <a href="Dashboard"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faHome} />
-                    <p className="text-xl font-bold ml-4 -mt-1">Home</p>
-                </div>
-                <div className="flex h-12">
+                   <p className="text-xl font-bold ml-4 -mt-1">Home</p>
+                </div></a> 
+
+                <a href="Portfolio"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faFire} />
-                    <p className="text-xl font-bold ml-5 -mt-1">Portfolio</p>
-                </div>
-                <div className="flex h-12">
+                   <p className="text-xl font-bold ml-5 -mt-1">Portfolio</p>
+                </div></a>
+                <a href="Dashboard"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faHeart} />
                     <p className="text-xl font-bold ml-4 -mt-1">Watchlist</p>
-                </div>
-                <div className="flex h-12">
+                </div></a>
+                <a href="Dashboard"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faBriefcase} />
                     <p className="text-xl font-bold ml-4 -mt-1">Trade</p>
-                </div>
-                <div className="flex h-12">
+                </div></a>
+                <a href="Dashboard"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faChartLine} />
                     <p className="text-xl font-bold ml-4 -mt-1">Strategies</p>
-                </div>
-                <div className="flex h-12">
+                </div></a>
+                <a href="Dashboard"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faBook} />
                     <p className="text-xl font-bold ml-4 -mt-1">Learning</p>
-                </div>
+                </div></a>
             </div>
 
             {/* <div className="flex h-12">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Chart from "react-apexcharts";
-
+import bg from '../components/backdrop.jpg';
 function PortfolioChart() {
     const [options, setOptions] = useState({
         chart: {
@@ -11,20 +11,28 @@ function PortfolioChart() {
         responsive: [{
             breakpoint: 480,
             options: {
+                
                 chart: {
                     width: 200
                 },
-                legend: {
-                    position: 'bottom'
+                plugin:{
+                    legend: {
+                        display: 'true',
+                        position: 'bottom',
+                        labels: {
+                            color: 'rgb(255, 99, 132)'
+                        }
+                    }
                 }
+                
             }
         }]
     })
 
     const [series, setSeries] = useState([44, 55, 13, 43, 22])
     return (
-        <div className="border-2 border-black rounded-xl px-2 pb-10 h-2/3 w-max mr-10">
-            <p className='text-center font-bold mb-10'>Your Portfolio</p>
+        <div className="border-2 border-white rounded-xl p-5 pb-10 h-2/3 w-max mr-10 " style={{ backgroundImage: `url(${bg})`}}>
+            <p className='text-center font-bold mb-10 text-white'>Your Portfolio</p>
             <Chart options={options} series={series} type="pie" width={450} />
         </div>
     )
