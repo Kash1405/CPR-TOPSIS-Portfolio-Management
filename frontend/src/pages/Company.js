@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import NewsBox from '../components/google_components/news_box'
+import Loader from '../components/Loader'
 // import NewsAlerts from '../components/recommended_news'
 import About from '../components/about_company'
 import Sidebar from '../components/sidebar';
@@ -8,9 +9,11 @@ import Topbar from '../components/topbar';
 import KeyRatios from '../components/key_ratios';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { LOD } from 'three'
 
 function Company() {
     const { ticker } = useParams()
+    const [loading, setLoading] = useState(true)
     const [stockData, setStockData] = useState(null);
     const [financialData, setFinancialData] = useState(null);
 
@@ -47,7 +50,7 @@ function Company() {
         fetchData();
     }, []);
     return (
-        stockData ? <div className="flex ">
+        stockData ? (<div className="flex ">
             <Helmet>
                 <style>{'body { background-color: black; }'}</style>
             </Helmet>
@@ -132,7 +135,7 @@ function Company() {
 
                 </div>
             </div>
-        </div > : ""
+        </div >) : <Loader />
     )
 }
 

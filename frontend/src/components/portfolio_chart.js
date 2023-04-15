@@ -7,15 +7,15 @@ function PortfolioChart() {
             width: 380,
             type: 'pie',
         },
-        labels: ['BTC', 'TSLA', 'GOOG', 'MSFT', 'AMZN'],
+        labels: ['AAPL', 'TSLA', 'GOOG', 'MSFT', 'AMZN'],
         responsive: [{
             breakpoint: 480,
             options: {
-                
+
                 chart: {
                     width: 200
                 },
-                plugin:{
+                plugin: {
                     legend: {
                         display: 'true',
                         position: 'bottom',
@@ -24,14 +24,14 @@ function PortfolioChart() {
                         }
                     }
                 }
-                
+
             }
         }]
     })
 
     const [series, setSeries] = useState([44, 55, 13, 43, 22])
     return (
-        <div className="border-2 border-yellow-600 rounded-xl p-5 pb-10 h-2/3 w-max mr-10 " style={{ backgroundImage: `url(${bg})`}}>
+        <div className="border-2 border-yellow-600 rounded-xl p-5 pb-10 h-2/3 w-max mr-10 " style={{ backgroundImage: `url(${bg})` }}>
             <p className='text-center font-bold mb-10 text-white'>Your Portfolio</p>
             <Chart options={options} series={series} type="pie" width={450} />
         </div>

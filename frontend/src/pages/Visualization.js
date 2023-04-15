@@ -1,390 +1,98 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { UnrealBloomPass } from "../../node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js";
-import ForceGraph3D from 'react-force-graph-3d';
+import Loader from '../components/Loader';
 
-const Visualization = () => {
-    const fgRef = useRef();
+import allocation from '../photos/allocation.png'
+import d_periods from "../photos/d_periods.png"
+import drawdown from "../photos/drawdown.png"
+import heatmap from "../photos/heatmap.png"
+import rshape from "../photos/rvol.png"
+import y_return from '../photos/y_returns.png'
+import ret from '../photos/ret.png'
+import rvol from '../photos/rvol.png'
+import rbeta from '../photos/rbeta.png'
+import retbench from '../photos/retbench.png'
+import { Helmet } from 'react-helmet';
+import Sidebar from '../components/sidebar';
+import Topbar from '../components/topbar';
+
+function Visualization() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [photo, setPhoto] = useState(allocation)
+    const [months, setMonths] = useState("1")
+    const [type, setType] = useState("close")
 
     useEffect(() => {
-        const bloomPass = new UnrealBloomPass();
-        bloomPass.strength = 5;
-        bloomPass.radius = 1;
-        bloomPass.threshold = 0.1;
-        fgRef.current.postProcessingComposer().addPass(bloomPass);
+        const updateStateAfterDelay = () => {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
+        };
+
+        updateStateAfterDelay();
     }, []);
 
+    const handlePhotograph = (data) => {
+        if (data === "1" || data === "3" || data === "6") {
+            setMonths(data)
+        }
+        else {
+            setType(data)
+        }
+
+        console.log(months + type)
+        setPhoto(months + type)
+    }
+
+    const photos = [
+        allocation,
+        d_periods,
+        drawdown,
+        heatmap,
+        rshape,
+        y_return,
+        ret,
+        rvol,
+        rbeta,
+        retbench
+    ];
+
     return (
-        <div className='flex'>
-            <div className='w-1/2'>
-                <ForceGraph3D
-                    ref={fgRef}
-                    graphData={data}
-                    nodeLabel="id"
-                    linkLabel="1"
-                    nodeRelSize={2}
-                    nodeAutoColorBy="group"
-                // width={100}
-                />;
+        isLoading ? <Loader /> : (
+            <div className="flex">
+                <Helmet>
+                    <style>{'body { background-color: black; }'}</style>
+                </Helmet>
+                <Sidebar />
+                <div >
+                    <Topbar />
+                    <div className="left-80 absolute top-20 m-20 w-1/2 grid p-5">
+                        <p className='text-xl text-white font-bold p-5'>Results</p>
+                        <div className='flex items-center justify-center'>
+                            <div className="flex relative w-full lg:max-w-sm  ">
+                                <select id="Select" onChange={e => handlePhotograph(e.target.value)} className="w-full mr-4 p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                                    <option>Months</option>
+                                    <option value="1">1 month</option>
+                                    <option value="3">3 months</option>
+                                    <option value="6">6 months</option>
+                                </select>
+                                <select id="Select" onChange={e => handlePhotograph(e.target.value)} className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                                    <option>Close/Volume/Return</option>
+                                    <option value="close">Daily Close</option>
+                                    <option value="volume">Daily Volume</option>
+                                    <option value="return">Daily Return</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="w-full p-5 mt-10 h-auto">
+                            <img src={photo} className="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className='w-1/2'>
-                <p>Hello World</p>
-            </div>
+        )
 
-
-        </div>
-    )
-
+    );
 }
 
 export default Visualization;
-
-
-let data = {
-    "nodes": [{
-        "id": "TESLA"
-    },
-    {
-        "id": "BRISA"
-    },
-    {
-        "id": "BMW"
-    },
-    {
-        "id": "RNO"
-    },
-    {
-        "id": "ML"
-    },
-    {
-        "id": "HMC"
-    },
-    {
-        "id": "GTX"
-    },
-    {
-        "id": "LEA"
-    }
-    ],
-    "links": [{
-        "source": "TESLA",
-        "target": "TESLA",
-        "value": 0.0
-    },
-    {
-        "source": "TESLA",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "TESLA",
-        "target": "BMW",
-        "value": 0.0
-    },
-    {
-        "source": "TESLA",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "TESLA",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "TESLA",
-        "target": "HMC",
-        "value": 9.560489864065765
-    },
-    {
-        "source": "TESLA",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "TESLA",
-        "target": "LEA",
-        "value": 7.308178896697721
-    },
-    {
-        "source": "BRISA",
-        "target": "TESLA",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "BMW",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "HMC",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "BRISA",
-        "target": "LEA",
-        "value": 0.0
-    },
-    {
-        "source": "BMW",
-        "target": "TESLA",
-        "value": 0.0
-    },
-    {
-        "source": "BMW",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "BMW",
-        "target": "BMW",
-        "value": 0.0
-    },
-    {
-        "source": "BMW",
-        "target": "RNO",
-        "value": 1.3007811891884824
-    },
-    {
-        "source": "BMW",
-        "target": "ML",
-        "value": 7.9511856205607545
-    },
-    {
-        "source": "BMW",
-        "target": "HMC",
-        "value": 0.0
-    },
-    {
-        "source": "BMW",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "BMW",
-        "target": "LEA",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "TESLA",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "BMW",
-        "value": 1.3007811891884824
-    },
-    {
-        "source": "RNO",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "HMC",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "RNO",
-        "target": "LEA",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "TESLA",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "BMW",
-        "value": 7.9511856205607545
-    },
-    {
-        "source": "ML",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "HMC",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "ML",
-        "target": "LEA",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "TESLA",
-        "value": 9.560489864065765
-    },
-    {
-        "source": "HMC",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "BMW",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "HMC",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "HMC",
-        "target": "LEA",
-        "value": 9.303316513314385
-    },
-    {
-        "source": "GTX",
-        "target": "TESLA",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "BMW",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "HMC",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "GTX",
-        "target": "LEA",
-        "value": 0.0
-    },
-    {
-        "source": "LEA",
-        "target": "TESLA",
-        "value": 7.308178896697721
-    },
-    {
-        "source": "LEA",
-        "target": "BRISA",
-        "value": 0.0
-    },
-    {
-        "source": "LEA",
-        "target": "BMW",
-        "value": 0.0
-    },
-    {
-        "source": "LEA",
-        "target": "RNO",
-        "value": 0.0
-    },
-    {
-        "source": "LEA",
-        "target": "ML",
-        "value": 0.0
-    },
-    {
-        "source": "LEA",
-        "target": "HMC",
-        "value": 9.303316513314385
-    },
-    {
-        "source": "LEA",
-        "target": "GTX",
-        "value": 0.0
-    },
-    {
-        "source": "LEA",
-        "target": "LEA",
-        "value": 0.0
-    }
-    ]
-}
