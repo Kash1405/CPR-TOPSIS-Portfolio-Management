@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import allocation from '../photos/allocation.png'
 import d_periods from "../photos/d_periods.png"
@@ -10,11 +10,13 @@ import ret from '../photos/ret.png'
 import rvol from '../photos/rvol.png'
 import rbeta from '../photos/rbeta.png'
 import retbench from '../photos/retbench.png'
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
 
 function RiskForm() {
+    const [photo, setPhoto] = useState(allocation)
+
     const photos = [
         allocation,
         d_periods,
@@ -31,34 +33,32 @@ function RiskForm() {
     return (
         <div className="flex">
             <Helmet>
-        <style>{'body { background-color: black; }'}</style>
-    </Helmet>
+                <style>{'body { background-color: black; }'}</style>
+            </Helmet>
             <Sidebar />
             <div >
                 <Topbar />
                 <div className="left-80 absolute top-20 m-20 w-1/2 grid p-5">
-                <p className='text-xl text-white font-bold p-5'>Results</p>
-                    
-
-<div className=' flex items-center justify-center'>
-<div className="relative w-full lg:max-w-sm  ">
-                        <select id="Select" className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
-                            <option>--Select Graph--</option>
-                            <option>Worst 5 Drawdown Periods</option>
-                            <option>Underwater Plot</option>
-                            <option>Monthly Returns (%)</option>
-                            <option>Rolling Volatility (6-Months)</option>
-                            <option>EOY Returns vs Benchmark</option>
-                            <option>Returns (6-Months)</option>
-                            <option>Rolling Beta to Benchmark (6-Months)</option>
-                            <option>Cumulative Returns vs Benchmark (6-Months)</option>
-                        </select>
+                    <p className='text-xl text-white font-bold p-5'>Results</p>
+                    <div className=' flex items-center justify-center'>
+                        <div className="relative w-full lg:max-w-sm  ">
+                            <select id="Select" onChange={e => setPhoto(e.target.value)} className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+                                <option>--Select Graph--</option>
+                                <option value={d_periods}>Worst 5 Drawdown Periods</option>
+                                <option value={retbench}>Underwater Plot</option>
+                                <option value={y_return}>Monthly Returns (%)</option>
+                                <option value={allocation}>Rolling Volatility (6-Months)</option>
+                                <option value={heatmap}>EOY Returns vs Benchmark</option>
+                                <option value={rvol}>Returns (6-Months)</option>
+                                <option value={rshape}>Rolling Beta to Benchmark (6-Months)</option>
+                                <option value={ret}>Cumulative Returns vs Benchmark (6-Months)</option>
+                            </select>
+                        </div>
                     </div>
-</div>
-                    
+
 
                     <div className="w-full p-5 mt-10 h-auto">
-                        <img src={allocation} className="w-full h-full object-cover" />
+                        <img src={photo} className="w-full h-full object-cover" />
                     </div>
 
                     {/* <div className="flex flex-wrap justify-center">

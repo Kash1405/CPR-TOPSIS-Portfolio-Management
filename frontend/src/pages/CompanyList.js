@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 function CompanyList() {
     const [companies, setCompanies] = useState(companyData)
@@ -10,36 +10,36 @@ function CompanyList() {
 
         <div className="flex bg-blue-50">
             <Helmet>
-        <style>{'body { background-color: black; }'}</style>
-    </Helmet>
-        <Sidebar />
-        <div >
-            <Topbar />
-        <div className="left-80 absolute top-20 bg-black">
-        
+                <style>{'body { background-color: black; }'}</style>
+            </Helmet>
+            <Sidebar />
+            <div >
+                <Topbar />
+                <div className="left-80 absolute top-20 bg-black">
 
-        <div className='flex flex-wrap justify-around'>
-            {
-                companies ? companies.map((company) =>
-                    <div className='w-1/4 m-5 flex border-white border-2 p-2 rounded-xl justify-around shadow-md text-white shadow-white hover:bg-yellow-600 hover:text-black'>
-                        <a className='flex m-2' href={'/company/' + company.Ticker}>
-                            <div>
-                                <img className="h-10 w-8 m-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1200px-Apple_logo_grey.svg.png" />
-                            </div>
-                            <div className='ml-5'>
-                                <p className='font-extrabold'>{company.Name}</p>
-                                <p> {company.Ticker}</p>
-                                <p> {company.Sector} | {company.Industry}</p>
-                            </div>
-                        </a>
+
+                    <div className='flex flex-wrap justify-around'>
+                        {
+                            companies ? companies.map((company) =>
+                                <div className='w-1/4 m-5 flex border-white border-2 p-2 rounded-xl justify-around shadow-md text-white shadow-white hover:bg-yellow-600 hover:text-black'>
+                                    <a className='flex m-2' href={'/company/' + company.Ticker}>
+                                        <div>
+                                            <img className="h-10 w-8 m-2" src={"https://logo.stocklight.com/NASDAQ/" + company.Ticker + "_icon.png"} />
+                                        </div>
+                                        <div className='ml-5'>
+                                            <p className='font-extrabold'>{company.Name}</p>
+                                            <p> {company.Ticker}</p>
+                                            <p> {company.Sector} | {company.Industry}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            ) : ""
+                        }
                     </div>
-                ) : ""
-            }
-        </div>
 
 
-        </div>
-        </div>
+                </div>
+            </div>
         </div>
     )
 }

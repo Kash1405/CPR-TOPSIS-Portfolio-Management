@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import NewsAlerts from '../components/recommended_news'
+import NewsBox from '../components/google_components/news_box'
+// import NewsAlerts from '../components/recommended_news'
 import About from '../components/about_company'
 import Sidebar from '../components/sidebar';
 import Topbar from '../components/topbar';
 import KeyRatios from '../components/key_ratios';
 import { useParams } from 'react-router-dom';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 function Company() {
     const { ticker } = useParams()
@@ -48,8 +49,8 @@ function Company() {
     return (
         stockData ? <div className="flex ">
             <Helmet>
-        <style>{'body { background-color: black; }'}</style>
-    </Helmet>
+                <style>{'body { background-color: black; }'}</style>
+            </Helmet>
             <Sidebar />
             <div className="w-4/5">
                 <Topbar />
@@ -57,7 +58,7 @@ function Company() {
 
                     <div className='flex mb-8 '>
                         <a href="http://apple.com" >
-                            <img className="h-30 w-20 m-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1200px-Apple_logo_grey.svg.png" />
+                            <img className="h-30 w-20 m-5" src={"https://logo.stocklight.com/NASDAQ/" + ticker + "_icon.png"} />
                         </a>
                         <div className='flex bg-black border-yellow-600 border-2 w-44 p-2 h-20 m-7 ml-20 rounded-md p-3 justify-center'>
                             {/* <img className="h-10 w-10 mt-1" src="https://media.istockphoto.com/id/1300548408/vector/growth-arrow-icon-green-arrow-up.jpg?s=612x612&w=0&k=20&c=n0NzPDJaU3bs9gVUT7_L-0Sf4Y5EtpYgfY2dM14fVW4=" /> */}
@@ -106,19 +107,21 @@ function Company() {
                         </div>
                     </div>
 
-                    <NewsAlerts />
+                    <NewsBox />
                     <div className='my-8 ml-5'>
                         <p className='font-bold mb-4'>Related Stocks</p>
                         <div className='flex justify-between px-24'>
                             {
                                 relatedStocks.map((relatedStock) => (
-                                    <div className='flex bg-black border-2 border-yellow-600 w-fit px-3 py-2 rounded-md mr-4 shadow-md shadow-yellow-600 hover:bg-yellow-600 hover:text-black hover:shadow-none'>
-                                        <img className="h-10 w-10 mt-1" src="https://media.istockphoto.com/id/1300548408/vector/growth-arrow-icon-green-arrow-up.jpg?s=612x612&w=0&k=20&c=n0NzPDJaU3bs9gVUT7_L-0Sf4Y5EtpYgfY2dM14fVW4=" />
-                                        <div className='ml-4 text-center'>
-                                            <p className='font-bold'>{relatedStock.company}</p>
-                                            <p>USD {relatedStock.price} <span className='font-bold'>({relatedStock.change}%)</span></p>
+                                    <a href={'/company/' + relatedStock.company}>
+                                        <div className='flex bg-black border-2 border-yellow-600 w-fit px-3 py-2 rounded-md mr-4 shadow-md shadow-yellow-600 hover:bg-yellow-600 hover:text-black hover:shadow-none'>
+                                            <img className="h-10 w-10 mt-1" src={"https://logo.stocklight.com/NASDAQ/" + relatedStock.company + "_icon.png"} />
+                                            <div className='ml-4 text-center'>
+                                                <p className='font-bold'>{relatedStock.company}</p>
+                                                <p>USD {relatedStock.price} <span className='font-bold'>({relatedStock.change}%)</span></p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 ))
                             }
                         </div>
