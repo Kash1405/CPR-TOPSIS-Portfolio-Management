@@ -12,10 +12,10 @@ function Dropdown({ label, options, value, onChange }) {
     return (
         
         <div>
-            <div className="m-5 p-5 text-white border-b-2 border-yellow-600">
+            <div className="m-2 p-5 text-white border-yellow-600">
             <label className="block font-bold mb-2">{label}</label>
             <select
-                className="w-2/3 p-2 bg-black border border-white rounded shadow"
+                className="w-2/3 p-2 bg-black border border-white rounded shadow focus:border-yellow-600"
                 value={value}
                 onChange={(event) => onChange(event.target.value)}
             >
@@ -67,22 +67,31 @@ function RiskForm() {
             <Sidebar />
             <div >
                 <Topbar />
-                <div className="left-80 absolute top-20 bg-black w-3/4 m-5 c">
+                <div className="left-80 absolute top-20 bg-black w-3/4 m-5 ">
+                    <div>
+                        <p className='text-white p-5 text-xl font-bold'>RiskForm</p>
+                    </div>
+                    <div className='border-yellow-600 border-2'>  
+                    
         <form onSubmit={handleSubmit}>
+            <div className=' grid grid-cols-2 '>
             {
+                
                 formData.map((question) =>
+                <div className=''>
                  <Dropdown
                     options={question.options}
                     label={question.label}
                     value={values.dropdown1}
                     onChange={(value) => handleChange('dropdown1', value)}
-                />
+                /></div>
                 )
+                
             }
-
+</div>
 <div className=' flex justify-around'>
             <button
-                className="bg-blue-700 border-white border-2 hover:bg-yellow-700 hover:border-black hover:text-black text-white font-bold py-2 px-4 mb-40 rounded m-5 w-56 text-xl"
+                className="bg-black shadow-lg shadow-white border-white border-2 hover:bg-yellow-700 hover:border-black hover:text-black hover:shadow-none text-white font-bold py-2 px-4 mb-40 rounded m-5 w-56 text-xl"
                 type="submit"
                 onClick={() => { window.location.href = '/result' }}
             >
@@ -90,6 +99,7 @@ function RiskForm() {
             </button>
             </div>
         </form>
+        </div>
         </div>
         </div>
         </div>

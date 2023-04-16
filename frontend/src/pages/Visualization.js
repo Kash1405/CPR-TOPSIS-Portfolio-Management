@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Loader from '../components/Loader';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import allocation from '../photos/allocation.png'
 import d_periods from "../photos/d_periods.png"
 import drawdown from "../photos/drawdown.png"
@@ -70,14 +70,14 @@ function Visualization() {
                         <p className='text-xl text-white font-bold p-5'>Results</p>
                         <div className='flex items-center justify-center'>
                             <div className="flex relative w-full lg:max-w-sm  ">
-                                <select id="Select" onChange={e => handlePhotograph(e.target.value)} className="w-full mr-4 p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
-                                    <option>Months</option>
+                                <select id="Select" onChange={e => handlePhotograph(e.target.value)} className="w-full mr-4 p-2.5 text-white bg-black border rounded-md shadow-sm outline-none appearance-none focus:border-yellow-600">
+                                    <option>--Months--</option>
                                     <option value="1">1 month</option>
                                     <option value="3">3 months</option>
                                     <option value="6">6 months</option>
                                 </select>
-                                <select id="Select" onChange={e => handlePhotograph(e.target.value)} className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
-                                    <option>Close/Volume/Return</option>
+                                <select id="Select" onChange={e => handlePhotograph(e.target.value)} className="w-full p-2.5 text-white bg-black border rounded-md shadow-sm outline-none appearance-none focus:border-yellow-600">
+                                    <option>--Close/Volume/Return--</option>
                                     <option value="close">Daily Close</option>
                                     <option value="volume">Daily Volume</option>
                                     <option value="return">Daily Return</option>
