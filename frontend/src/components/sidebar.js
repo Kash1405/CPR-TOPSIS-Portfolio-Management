@@ -8,7 +8,7 @@ function Sidebar() {
     return (
         <div className="w-80 h-screen px-10 py-5 fixed border-yellow-600 border-r-2 bg-black " >
             <div className='flex  justify-evenly '>
-                <img src={Logo} alt="ATX" width={150} height={500} />
+                <img src={Logo} alt="CPG"  className='m-5 w-20'/>
             </div>
 
             {/* <div className="h-20 bg-white rounded-lg mt-10 pt-2 pb-4 px-3 bg-green-200">

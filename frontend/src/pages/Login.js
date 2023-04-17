@@ -65,7 +65,7 @@ function Login() {
 
                 <div className="w-full max-w-xs m-auto bg-black rounded-xl border-yellow-600 border-2  p-5 shadow-lg shadow-yellow-900">
                     <header>
-                        <img className="w-28 mx-auto mb-5" src={Logo} />
+                        <img className="w-20 mx-auto mb-5" src={Logo} />
                     </header>
                     <form>
                         <div>
