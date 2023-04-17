@@ -8,6 +8,7 @@ import Portfolio from './pages/Portfolio';
 import Company from './pages/Company';
 import Login from './pages/Login';
 import Signup from "./pages/Signup";
+import Research from './pages/Research';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route exact path="/portfolio">
           <Portfolio />
+        </Route>
+        <Route exact path="/research">
+          <Research />
         </Route>
       </Switch>
     </Router>
