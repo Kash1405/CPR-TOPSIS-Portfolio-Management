@@ -55,7 +55,7 @@ class StockGraph():
   
   def clusterNodes(self):
     if not self.cluster:
-      self.clusterIdxLabel = {i:1 for i in list(self.adj.index)}
+      self.clusterIdxLabel = {i:1 for i in range(len(self.adj.index))}
       return
     
     distMatrix1D = defaultdict(int)
@@ -85,8 +85,7 @@ class StockGraph():
   
   def generateClusterColors(self):
     if not self.cluster:
-      nodeColor = []
-      nodeColor.append(1,1,1,1)
+      nodeColor = {i:[1,1,1,1] for i in range(len(self.correlationTable.index))}
       self.nodeColor = nodeColor
       return
     
