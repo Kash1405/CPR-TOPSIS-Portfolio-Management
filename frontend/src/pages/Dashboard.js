@@ -1,26 +1,31 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 
 import PortfolioChart from "../components/portfolio_chart";
 import RecommendedStocks from "../components/recommended_stocks";
-import RecommendedNews from "../components/recommended_news";
 import Sidebar from '../components/sidebar';
+import NewsBox from '../components/google_components/news_box'
 import Topbar from '../components/topbar';
-import NewsAlerts from "../components/news_alerts";
+
 
 function Dashboard() {
     return (
-        <div className="flex">
+
+        <div className="flex " >
+            <Helmet>
+                <style>{'body { background-color: black; }'}</style>
+            </Helmet>
             <Sidebar />
-            <div className="left-80 absolute w-4/5">
+            <div className="left-80 absolute w-4/5" >
                 <Topbar />
-                <div className="flex-column scroll-smooth top-20 absolute w-max left-40 -ml-10 py-20">
-                    <div className="flex justify-between">
+                <div className="flex-column scroll-smooth top-20 absolute left-40 -ml-10 pr-20 pt-5 bg-black " >
+                    <div className="flex justify-between ">
                         <PortfolioChart />
                         <RecommendedStocks />
                     </div>
-                    <div className="">
-                        <RecommendedNews />
-                        <NewsAlerts />
+                    <div className="bg-black">
+                        <NewsBox />
+                        {/* <NewsAlerts /> */}
                     </div>
                 </div>
             </div>

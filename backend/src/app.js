@@ -54,6 +54,7 @@ app.use(function (req, res, next) {
     app.use('/v1/user', routers.userRouter);
     app.use('/v1/access', routers.accessRouter);
     app.use('/v1/company', routers.companyRouter);
+    app.use('/v1/news', routers.newsRouter);
     app.use('/v1/graph', routers.graphRouter);
 
     expressLoader.post({ app });

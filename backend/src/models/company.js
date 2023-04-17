@@ -1,25 +1,15 @@
 const mongoose = require('mongoose');
 
+const newsItemSchema = new mongoose.Schema({
+    title: String,
+    source: String
+});
+
 class Company {
     constructor() {
         const CompanySchema = new mongoose.Schema({
             ticker: String,
-            exchange: String,
-            type: String,
-            sector: String,
-            industry: String,
-            website: String,
-            description: String,
-            peratio: Number,
-            expectedpe: Number,
-            expectedpeg: Number,
-            dividendYield: Number,
-            totalLiabilities: Number,
-            debtEquity: Number,
-            totalCurrentAssets: Number,
-            totalCurrentLiab: Number,
-            currentRatio: Number
-
+            news_items: [newsItemSchema]
         }, { timestamps: true });
 
         this.model = mongoose.model('Company', CompanySchema);

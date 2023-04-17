@@ -9,11 +9,13 @@ class AccessController {
     async login(req, res, next) {
         let user;
         let token;
-        const { username, password } = req.body
+        const { email, password } = req.body
+
+        console.log("Hi")
         try {
             user = await this.userService.login({
                 query: {
-                    username
+                    email
                 },
                 password
             });

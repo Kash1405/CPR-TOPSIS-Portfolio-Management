@@ -1,6 +1,7 @@
 const userRouter = require('./user_router');
 const accessRouter = require('./access_router');
 const companyRouter = require('./company_router');
+const newsRouter = require("./news_router")
 const graphRouter = require('./graph_router');
 
 class Routers {
@@ -14,6 +15,10 @@ class Routers {
             controllers.companyController,
             auth
         );
+        this.newsRouter = newsRouter(
+            controllers.newsController,
+            auth
+        )
         this.graphRouter = graphRouter(controllers.graphController);
     }
 }

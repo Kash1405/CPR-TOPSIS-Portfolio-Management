@@ -6,14 +6,13 @@ class CompanyController {
     }
 
     async findOne(req, res, next) {
-        const { id } = req.params
-        console.log("Hi we live")
-        let music;
+        const { ticker } = req.params
+        let company;
 
         try {
-            music = await this.companyService.findOne({
+            company = await this.companyService.findOne({
                 query: {
-                    _id: id
+                    ticker
                 }
             })
         }
@@ -22,24 +21,17 @@ class CompanyController {
         }
 
         return res.json({
-            music
+            company
         })
     }
 
     async findAll(req, res, next) {
-
-        let musicItems
+        let companies
 
         const { category } = req.query
 
         try {
-            musicItems = typeof (category) === 'undefined' ?
-                await this.companyService.findMany({}) :
-                await this.companyService.findMany({
-                    query: {
-                        category
-                    }
-                })
+            companies = await this.companyService.findMany({})
         }
         catch (e) {
             return next(e)
@@ -47,7 +39,7 @@ class CompanyController {
 
 
         return res.json({
-            musicItems
+            companies
         })
     }
 
@@ -106,10 +98,6 @@ class CompanyController {
         return res.json({
             companies
         })
-    }
-
-    async updateOne(req, res, next) {
-
     }
 }
 

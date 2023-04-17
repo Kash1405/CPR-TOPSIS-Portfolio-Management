@@ -9,11 +9,27 @@ import Company from './pages/Company';
 import Login from './pages/Login';
 import Signup from "./pages/Signup";
 import Research from './pages/Research';
+import CompanyList from "./pages/CompanyList";
+import Visualization from './pages/Visualization';
+import RiskForm from "./pages/RiskForm";
+import Result from './pages/Result'
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path='/result'>
+          <Result />
+        </Route>
+        <Route exact path='/riskform'>
+          <RiskForm />
+        </Route>
+        <Route exact path='/company'>
+          <CompanyList />
+        </Route>
+        <Route exact path='/visualization'>
+          <Visualization />
+        </Route>
         <Route exact path="/dashboard">
           <Dashboard />
         </Route>
@@ -26,7 +42,7 @@ function App() {
         <Route exact path="/strategy">
           <Strategy />
         </Route>
-        <Route exact path="/company">
+        <Route exact path="/company/:ticker">
           <Company />
         </Route>
         <Route exact path="/portfolio">
