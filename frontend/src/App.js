@@ -8,6 +8,7 @@ import Portfolio from './pages/Portfolio';
 import Company from './pages/Company';
 import Login from './pages/Login';
 import Signup from "./pages/Signup";
+import Research from './pages/Research';
 import CompanyList from "./pages/CompanyList";
 import Visualization from './pages/Visualization';
 import RiskForm from "./pages/RiskForm";
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route exact path="/portfolio">
           <Portfolio />
+        </Route>
+        <Route exact path="/research">
+          <Research />
         </Route>
       </Switch>
     </Router>
