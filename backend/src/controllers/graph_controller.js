@@ -11,12 +11,12 @@ class GraphController {
         if (correlationType == "Close Price")
             correlationType = "dailyClosePrice";
         
-        if (filter == "None")
+        if (filter == "Both")
             filter = ""
         else if (filter == "Positive")
-            filter = "+"
-        else
             filter = "-"
+        else
+            filter = "+"
         
         if (cpr == "true") cpr = "True"
         else cpr = "False"

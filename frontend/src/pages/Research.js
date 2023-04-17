@@ -51,7 +51,7 @@ const Research = () => {
                                 <option>Close Price</option>
                             </datalist>
                         <p>Correlate either the daily price returns, trading volumes, or closing prices of two stocks.</p>
-                        <p>Default: Price Returns</p>
+                        <p>Recommended: Price Returns</p>
                     </div>
 
 
@@ -63,18 +63,18 @@ const Research = () => {
                                 <option>6</option>
                             </datalist>
                         <p>Time period, in the past from today, for which to compare two stocks.</p>
-                        <p>Default: 1</p>
+                        <p>Recommended: 1</p>
                     </div>
 
                     <div className='mb-5'>
                         <input list="filterCorrs" name="filterCorrWhichAre" id="filterCorrWhichAre" className='border-2 border-black pl-1' placeholder='Filter Correlations' value={filterCorr} onInput={e=>setFilterCorr(e.target.value)} />
                             <datalist id="filterCorrs">
-                                <option>None</option>
+                                <option>Both</option>
                                 <option>Positive</option>
                                 <option>Negative</option>
                             </datalist>
                         <p>Allows you to only consider edges resulting from positive/negative correlations.</p>
-                        <p>Default: None</p>
+                        <p>Recommended: Both</p>
                     </div>
 
                     <div className='mb-5 flex items-center '>
