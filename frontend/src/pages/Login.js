@@ -2,50 +2,50 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import bg from '../components/backdrop.jpg';
 import Logo from "../components/Logo.png"
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 const logInHandler = async (email, password) => {
     if (email === '' || password === '') {
         alert("Please fill the empty fields and try again!")
     }
     else {
-        let user
-        const userDeatils = {
-            email,
-            password
-        }
+        // let user
+        // const userDeatils = {
+        //     email,
+        //     password
+        // }
 
-        console.log({
-            email,
-            password
-        })
-        let data = JSON.stringify({
-            "email": "raunak12@connect.hku.hk",
-            "password": "snubble1234"
-        });
+        // console.log({
+        //     email,
+        //     password
+        // })
+        // let data = JSON.stringify({
+        //     "email": "raunak12@connect.hku.hk",
+        //     "password": "snubble1234"
+        // });
 
-        let config = {
-            method: 'post',
-            maxBodyLength: Infinity,
-            url: 'http://localhost:8080/v1/access/login',
-            headers: {
-                'Content-Type': 'text/plain'
-            },
-            data: data
-        };
+        // let config = {
+        //     method: 'post',
+        //     maxBodyLength: Infinity,
+        //     url: 'http://localhost:8080/v1/access/login',
+        //     headers: {
+        //         'Content-Type': 'text/plain'
+        //     },
+        //     data: data
+        // };
 
-        axios.request(config)
-            .then((response) => {
-                console.log(JSON.stringify(response.data));
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        // axios.request(config)
+        //     .then((response) => {
+        //         console.log(JSON.stringify(response.data));
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
 
 
-        localStorage.setItem('user', JSON.stringify(user))
+        // localStorage.setItem('user', JSON.stringify(user))
         // window.location.reload()
-        // window.location.href = '/dashboard'
+        window.location.href = '/dashboard'
     }
 }
 
@@ -56,8 +56,8 @@ function Login() {
     return (
         <div className=' p-20 bg-gradient-to-b from-blue-900 to-transparent'>
             <Helmet>
-        <style>{'body { background-color: black; }'}</style>
-    </Helmet>
+                <style>{'body { background-color: black; }'}</style>
+            </Helmet>
             <div classNameName="flex h-screen" >
                 <div className='flex m-5 justify-center '>
                     <p className='text-white font-sans text-center p-5 bg-blue-800 border-yellow-600 border-b-2 border-r-2 w-1/5 rounded-xl text-xl' >LogIn</p>

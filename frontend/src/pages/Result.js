@@ -50,29 +50,29 @@ function RiskForm() {
                 <Sidebar />
                 <div >
                     <Topbar />
-                    <div className="left-80 absolute top-20 m-20 w-1/2 grid p-5">
+                    <div className="left-80 absolute m-20 w-1/2 grid p-5">
                         <p className='text-xl text-white font-bold p-5'>Results</p>
                         <div className='border-2 p-2 border-yellow-600'>
-                        <div className=' flex items-center justify-center'>
-                            <div className="relative w-full lg:max-w-sm  ">
-                                <select id="Select" onChange={e => setPhoto(e.target.value)} className="w-full p-2.5 text-white bg-black border rounded-md shadow-sm outline-none appearance-none focus:border-yellow-600">
-                                    <option value={allocation}>--Select Graph--</option>
-                                    <option value={d_periods}>Worst 5 Drawdown Periods</option>
-                                    <option value={drawdown}>Underwater Plot</option>
-                                    <option value={heatmap}>Monthly Returns (%)</option>
-                                    <option value={rvol}>Rolling Volatility (6-Months)</option>
-                                    <option value={rshape}>Rolling Sharpe (6-Months)</option>
-                                    <option value={y_return}>EOY Returns vs Benchmark</option>
-                                    <option value={ret}>Returns (6-Months)</option>
-                                    <option value={rbeta}>Rolling Beta to Benchmark (6-Months)</option>
-                                    <option value={retbench}>Cumulative Returns vs Benchmark (6-Months)</option>
-                                </select>
+                            <div className=' flex items-center justify-center'>
+                                <div className="relative w-full lg:max-w-sm  ">
+                                    <select id="Select" onChange={e => setPhoto(e.target.value)} className="w-full p-2.5 text-white bg-black border rounded-md shadow-sm outline-none appearance-none focus:border-yellow-600">
+                                        <option value={allocation}>--Select Graph--</option>
+                                        <option value={d_periods}>Worst 5 Drawdown Periods</option>
+                                        <option value={drawdown}>Underwater Plot</option>
+                                        <option value={heatmap}>Monthly Returns (%)</option>
+                                        <option value={rvol}>Rolling Volatility (6-Months)</option>
+                                        <option value={rshape}>Rolling Sharpe (6-Months)</option>
+                                        <option value={y_return}>EOY Returns vs Benchmark</option>
+                                        <option value={ret}>Returns (6-Months)</option>
+                                        <option value={rbeta}>Rolling Beta to Benchmark (6-Months)</option>
+                                        <option value={retbench}>Cumulative Returns vs Benchmark (6-Months)</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="w-full p-5 mt-10 h-auto">
-                            <img src={photo} className="w-full h-full object-cover" />
-                        </div>
+                            <div className="w-full p-5 mt-10 h-auto">
+                                <img src={photo} className="w-full h-full object-cover" />
+                            </div>
                         </div>
                         <a href="/visualization"><button className='bg-black text-white hover:bg-yellow-600 hover:text-black hover:border-black border-2 border-white p-5 m-10 rounded-xl '>Check Graphical Visualizations</button></a>
 
