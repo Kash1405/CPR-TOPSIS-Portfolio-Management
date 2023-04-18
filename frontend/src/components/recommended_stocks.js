@@ -22,68 +22,58 @@ function RecommendedStocks() {
     )
 }
 
+
 const stockData = [
     {
         name: 'TSLA',
-        icon: faArrowDown,
-        price: 0.251
+        icon: faArrowUp,
+        price: 185.28
     },
     {
         name: 'CPRT',
-        icon: faArrowDown,
-        price: 0.251
+        icon: faArrowUp,
+        price: 77.12
     },
     {
         name: 'AMD',
         icon: faArrowDown,
-        price: 0.251
+        price: 89.02
     },
     {
         name: 'MSFT',
         icon: faArrowUp,
-        price: 1.251
+        price: 287.43
     },
     {
         name: 'AMZN',
         icon: faArrowDown,
-        price: 2.251
-    },
-    {
-        name: 'AMZN',
-        icon: faArrowDown,
-        price: 2.251
+        price: 102.49
     },
     {
         name: 'GOOG',
-        icon: faArrowUp,
-        price: 3.251
+        icon: faArrowDown,
+        price: 105.79
     },
     {
         name: 'SOL',
-        icon: faArrowDown,
-        price: 4.251
+        icon: faArrowUp,
+        price: 4.33
     },
     {
         name: 'AAPL',
-        icon: faArrowUp,
-        price: 0.251
+        icon: faArrowDown,
+        price: 164.59
     },
     {
         name: '0670.HK',
-        icon: faArrowDown,
-        price: 1.251
+        icon: faArrowUp,
+        price: 0.41
     },
-    // {
-    //     name: 'LVMH',
-    //     icon: faArrowUp,
-    //     price: 2.251
-    // },
-    // {
-    //     name: '0700.HK',
-    //     icon: faArrowDown,
-    //     price: 0.251
-    // },
-
+    {
+        name: 'LVMH',
+        icon: faArrowDown,
+        price: 949.85
+    },
 ]
 
 export default RecommendedStocks

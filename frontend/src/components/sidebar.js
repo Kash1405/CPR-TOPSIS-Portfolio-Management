@@ -26,24 +26,20 @@ function Sidebar() {
                 </div></a>
 
                 <a href="/Portfolio"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
-                    <FontAwesomeIcon className="text-2xl" icon={faFire} />
-                    <p className="text-xl font-bold ml-5 -mt-1">Portfolio</p>
-                </div></a>
-                <a href="/result"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faHeart} />
-                    <p className="text-xl font-bold ml-4 -mt-1">Watchlist</p>
+                    <p className="text-xl font-bold ml-5 -mt-1">Watchlist</p>
+                </div></a>
+                <a href="/result"><div className="flex h-15 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
+                    <FontAwesomeIcon className="text-2xl" icon={faChartLine} />
+                    <p className="text-xl font-bold ml-4 -mt-1">Stock Performance</p>
                 </div></a>
                 <a href="/riskform"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faBriefcase} />
-                    <p className="text-xl font-bold ml-4 -mt-1">Trade</p>
-                </div></a>
-                <a href="visualization"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
-                    <FontAwesomeIcon className="text-2xl" icon={faChartLine} />
-                    <p className="text-xl font-bold ml-4 -mt-1">Strategies</p>
+                    <p className="text-xl font-bold ml-4 -mt-1">Risk Form</p>
                 </div></a>
                 <a href="company"><div className="flex h-12 bg-gradient-to-r rounded-tl-xl text-white from-blue-700 to-transparent border-b-2 mt-2 p-2 hover:from-yellow-600 hover:text-black hover:border-black">
                     <FontAwesomeIcon className="text-2xl" icon={faBook} />
-                    <p className="text-xl font-bold ml-4 -mt-1">Learning</p>
+                    <p className="text-xl font-bold ml-4 -mt-1">Directory</p>
                 </div></a>
             </div>
 
