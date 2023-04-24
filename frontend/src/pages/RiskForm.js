@@ -27,7 +27,6 @@ function Dropdown({ label, options, value, onChange }) {
                     ))}
                 </select>
             </div>
-
         </div>
 
     );
@@ -81,8 +80,8 @@ function RiskForm() {
                                             <Dropdown
                                                 options={question.options}
                                                 label={question.label}
-                                                value={values.dropdown1}
-                                                onChange={(value) => handleChange('dropdown1', value)}
+                                                value={values[question.dropdown]}
+                                                onChange={(value) => handleChange(question.dropdown, value)}
                                             /></div>
                                     )
 
@@ -111,6 +110,7 @@ export default RiskForm;
 const formData = [
     {
         "label": "Sector",
+        "dropdown": "dropdown1",
         "options": [
             {
                 'label': 'Consumer Cyclical'
@@ -144,6 +144,7 @@ const formData = [
     },
     {
         "label": "Age",
+        "dropdown": "dropdown2",
         "options": [
             {
                 "label": "Under 25",
@@ -169,6 +170,7 @@ const formData = [
     },
     {
         "label": "Income level",
+        "dropdown": "dropdown3",
         "options": [
             {
                 "label": "Less than $50,000",
@@ -194,6 +196,7 @@ const formData = [
     },
     {
         "label": "Investment experience",
+        "dropdown": "dropdown4",
         "options": [
             {
                 "label": "No experience",
@@ -219,6 +222,7 @@ const formData = [
     },
     {
         "label": "Investment timeframe",
+        "dropdown": "dropdown5",
         "options": [
             {
                 "label": "Less than 3 years",
@@ -244,6 +248,7 @@ const formData = [
     },
     {
         "label": "Primary investment goal",
+        "dropdown": "dropdown6",
         "options": [
             {
                 "label": "Preservation of capital",
@@ -269,6 +274,7 @@ const formData = [
     },
     {
         "label": "Reaction to a 20% decrease in portfolio value",
+        "dropdown": "dropdown7",
         "options": [
             {
                 "label": "Extremely anxious",
@@ -294,6 +300,7 @@ const formData = [
     },
     {
         "label": "Comfort level with portfolio loss",
+        "dropdown": "dropdown8",
         "options": [
             {
                 "label": "None",
@@ -319,6 +326,7 @@ const formData = [
     },
     {
         "label": "Importance of beating the market",
+        "dropdown": "dropdown9",
         "options": [
             {
                 "label": "Not at all important",
@@ -344,6 +352,7 @@ const formData = [
     },
     {
         "label": "Importance of stable and predictable returns",
+        "dropdown": "dropdown10",
         "options": [
             {
                 "label": "Not at all important",
@@ -369,6 +378,7 @@ const formData = [
     },
     {
         "label": "Overall attitude towards risk",
+        "dropdown": "dropdown11",
         "options": [
             {
                 "label": "Extremely risk-averse",
